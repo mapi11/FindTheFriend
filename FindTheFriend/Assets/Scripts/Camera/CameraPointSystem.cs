@@ -131,6 +131,13 @@ public class CameraPointSystem : MonoBehaviour
         door.MarkAsUsed();
         _usedDoors.Add(door);
 
+        // Вызываем OnPlayerEntered перед движением к exit point (вторая точка)
+        //DoorEnemyInteraction doorInteraction = door.GetComponent<DoorEnemyInteraction>();
+        //if (doorInteraction != null)
+        //{
+        //    doorInteraction.OnPlayerEntered();
+        //}
+
         // Move to approach point (первая точка)
         yield return MoveToPosition(door.approachPoint);
 
@@ -158,7 +165,7 @@ public class CameraPointSystem : MonoBehaviour
         {
             doorInteraction.OnPlayerEntered();
         }
-        
+
 
         // Move to exit point (вторая точка)
         yield return MoveToPosition(door.exitPoint);

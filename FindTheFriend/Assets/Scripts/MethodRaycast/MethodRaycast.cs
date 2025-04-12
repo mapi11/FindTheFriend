@@ -3,7 +3,8 @@ using UnityEngine;
 public class MethodRaycast : MonoBehaviour
 {
     [Header("Методы активации")]
-    public bool watchAdd = false;
+    public bool watchAddFullRevive = false;
+    public bool watchAddRevive = false;
     public bool reloadScene = false;
     public bool customAction = false;
 
@@ -12,6 +13,7 @@ public class MethodRaycast : MonoBehaviour
     public LayerMask interactableLayer;
 
     private HealthSystem healthSystem;
+    RoomsCounter RoomsCounter;
 
     private void Start()
     {
@@ -24,6 +26,8 @@ public class MethodRaycast : MonoBehaviour
             {
                 Debug.LogError("HealthSystem не найден на объекте Character!");
             }
+
+            RoomsCounter = GetComponent<RoomsCounter>();
         }
         else
         {
@@ -40,15 +44,16 @@ public class MethodRaycast : MonoBehaviour
             return;
         }
 
-        GameObject secondPoint = GameObject.Find("secondPoint");
-        if (secondPoint == null)
-        {
-            Debug.LogError("Точка secondPoint не найдена!");
-            return;
-        }
+        //GameObject lastCharacterPosition = GameObject.Find("LastCharacterPosition(Clone)");
+        //if (lastCharacterPosition == null)
+        //{
+        //    Debug.LogError("LastCharacterPosition не найдена!");
+        //    return;
+        //}
 
-        character.transform.position = secondPoint.transform.position;
-        Debug.Log("Character телепортирован к secondPoint");
+        //character.transform.position = lastCharacterPosition.transform.position;
+        //Debug.Log("Character телепортирован к LastCharacterPosition");
+        //Destroy(lastCharacterPosition);
     }
 
     private void Update()
@@ -72,13 +77,18 @@ public class MethodRaycast : MonoBehaviour
 
     private void ExecuteMethod(GameObject targetObject)
     {
-        if (watchAdd)
+        if (watchAddFullRevive)
         {
-            WatchAdd(targetObject);
+            WatchAddFullRevive(targetObject);
+        }
+        else if (watchAddRevive)
+        {
+            WatchAddRevive(targetObject);
         }
         else if (reloadScene)
         {
             ReloadScene();
+            RoomsCounter.RoomCount = 0;
         }
         else if (customAction)
         {
@@ -86,15 +96,31 @@ public class MethodRaycast : MonoBehaviour
         }
     }
 
-    private void WatchAdd(GameObject target)
+    private void WatchAddFullRevive(GameObject target)
     {
         Debug.Log("Объект " + target.name + " добавлен в список просмотра");
 
-        TeleportToSecondPoint();
+        //TeleportToSecondPoint();
 
         if (healthSystem != null)
         {
             healthSystem.FullHeal();
+        }
+        else
+        {
+            Debug.LogError("Не удалось выполнить исцеление: HealthSystem не найден");
+        }
+    }
+
+    private void WatchAddRevive(GameObject target)
+    {
+        Debug.Log("Объект " + target.name + " добавлен в список просмотра");
+
+        //TeleportToSecondPoint();
+
+        if (healthSystem != null)
+        {
+            healthSystem.Heal();
         }
         else
         {
@@ -115,13 +141,15 @@ public class MethodRaycast : MonoBehaviour
 
     public void SetActiveAction(string actionType)
     {
-        watchAdd = false;
+        watchAddFullRevive = false;
+        watchAddRevive = false ;
         reloadScene = false;
         customAction = false;
 
         switch (actionType)
         {
-            case "watch": watchAdd = true; break;
+            case "watchAddFullRevive": watchAddFullRevive = true; break;
+            case "watchAddRevive": watchAddRevive = true; break;
             case "reload": reloadScene = true; break;
             case "custom": customAction = true; break;
         }

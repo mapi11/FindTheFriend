@@ -34,8 +34,8 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - Add
+  - AddFullRevive
+  - AddRevive
   - Reload
   m_SortingLayers:
   - name: Default

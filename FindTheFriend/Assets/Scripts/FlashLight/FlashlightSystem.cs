@@ -16,18 +16,25 @@ public class FlashlightSystem : MonoBehaviour
     public float rechargeSpeed = 10f;
 
     [Header("UI Settings")]
-    public Slider batterySlider; // Слайдер для отображения заряда
-    public Image fillArea; // Область заполнения слайдера
+    public Slider batterySlider;
+    [SerializeField] private Image sliderFill; // Теперь приватное с сериализацией
     public Color fullChargeColor = Color.green;
     public Color mediumChargeColor = Color.yellow;
     public Color lowChargeColor = Color.red;
-    [Range(0, 50)] public int mediumThreshold = 50; // Порог среднего заряда
-    [Range(0, 20)] public int lowThreshold = 20; // Порог низкого заряда
+    [Range(0, 100)] public int mediumThreshold = 50;
+    [Range(0, 100)] public int lowThreshold = 20;
 
+    private HealthSystem _healthSystem;
     private bool _isOn = true;
 
     private void Start()
     {
+        _healthSystem = FindObjectOfType<HealthSystem>();
+        if (_healthSystem == null)
+        {
+            Debug.LogError("HealthSystem не найден в сцене!");
+        }
+
         if (flashlightLight == null)
         {
             flashlightLight = GetComponent<Light>();
@@ -41,6 +48,12 @@ public class FlashlightSystem : MonoBehaviour
     {
         if (batterySlider != null)
         {
+            // Автоматически находим Fill если не назначен
+            if (sliderFill == null)
+            {
+                sliderFill = batterySlider.fillRect.GetComponent<Image>();
+            }
+
             batterySlider.maxValue = 100;
             batterySlider.minValue = 0;
             batterySlider.value = batteryCharge;
@@ -50,14 +63,41 @@ public class FlashlightSystem : MonoBehaviour
 
     private void Update()
     {
-        if (_isOn)
+        if (CanDrainBattery())
         {
-            batteryCharge -= drainSpeed * Time.deltaTime;
-            batteryCharge = Mathf.Clamp(batteryCharge, 0, 100);
-            UpdateBatteryUI();
+            UpdateBatteryCharge();
         }
 
         UpdateLightParameters();
+    }
+
+    private bool CanDrainBattery()
+    {
+        return _isOn && (_healthSystem == null || _healthSystem.currentHealth > 0);
+    }
+
+    private void UpdateBatteryCharge()
+    {
+        batteryCharge -= drainSpeed * Time.deltaTime;
+        batteryCharge = Mathf.Clamp(batteryCharge, 0, 100);
+        UpdateBatteryUI();
+
+        if (batteryCharge <= 0)
+        {
+            BatteryDepleted();
+        }
+    }
+
+    private void BatteryDepleted()
+    {
+        Debug.Log("Батарея разряжена!");
+
+        if (_healthSystem != null && _healthSystem.currentHealth > 0)
+        {
+            _healthSystem.Die();
+        }
+
+        ToggleFlashlight(false);
     }
 
     private void UpdateLightParameters()
@@ -80,19 +120,23 @@ public class FlashlightSystem : MonoBehaviour
 
     private void UpdateSliderColor()
     {
-        if (fillArea == null) return;
+        if (sliderFill == null) return;
 
-        if (batteryCharge <= lowThreshold)
+        float currentCharge = batteryCharge;
+        float normalizedCharge = currentCharge / 100f;
+
+        if (currentCharge <= lowThreshold)
         {
-            fillArea.color = lowChargeColor;
+            sliderFill.color = Color.Lerp(lowChargeColor, mediumChargeColor, normalizedCharge / lowThreshold);
         }
-        else if (batteryCharge <= mediumThreshold)
+        else if (currentCharge <= mediumThreshold)
         {
-            fillArea.color = mediumChargeColor;
+            sliderFill.color = Color.Lerp(mediumChargeColor, fullChargeColor,
+                (normalizedCharge - lowThreshold / 100f) / ((mediumThreshold - lowThreshold) / 100f));
         }
         else
         {
-            fillArea.color = fullChargeColor;
+            sliderFill.color = fullChargeColor;
         }
     }
 
@@ -106,8 +150,25 @@ public class FlashlightSystem : MonoBehaviour
 
     public void ToggleFlashlight()
     {
-        _isOn = !_isOn;
-        flashlightLight.enabled = _isOn;
+        ToggleFlashlight(!_isOn);
+    }
+
+    public void ToggleFlashlight(bool state)
+    {
+        _isOn = state;
+        if (flashlightLight != null)
+        {
+            flashlightLight.enabled = _isOn;
+        }
+    }
+
+    // Для автоматической настройки в редакторе
+    private void OnValidate()
+    {
+        if (batterySlider != null && sliderFill == null)
+        {
+            sliderFill = batterySlider.fillRect?.GetComponent<Image>();
+        }
     }
 
     [ContextMenu("Test Recharge 25%")]

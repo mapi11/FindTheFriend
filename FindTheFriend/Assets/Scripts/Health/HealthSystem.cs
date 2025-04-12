@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class HealthSystem : MonoBehaviour
@@ -13,16 +14,24 @@ public class HealthSystem : MonoBehaviour
     [Header("Death Settings")]
     public GameObject spawnPrefab; // Префаб для спавна при смерти (опционально)
 
-    private Transform saveZonePoint; // Точка для телепортации
+    private Transform saveZonePoint;
     private CameraPointSystem cameraPointSystem;
+    private static int savedRoomCount = 0;
+    private static int savedHealth = 0; // Добавляем сохранение здоровья
 
     private void Start()
     {
         cameraPointSystem = GetComponent<CameraPointSystem>();
-        currentHealth = maxHealth;
+
+        // Восстанавливаем сохраненные значения
+        if (TryGetComponent<RoomsCounter>(out var roomsCounter))
+        {
+            roomsCounter.RoomCount = savedRoomCount;
+        }
+        currentHealth = savedHealth > 0 ? savedHealth : maxHealth; // Восстанавливаем здоровье или ставим максимум
+
         UpdateHearts();
 
-        // Находим точку сохранения по имени
         GameObject saveZone = GameObject.Find("SaveZonePoint");
         if (saveZone != null)
         {
@@ -47,12 +56,38 @@ public class HealthSystem : MonoBehaviour
         }
     }
 
+    // Метод для перезагрузки сцены с сохранением RoomCount
+    private void ReloadRevive()
+    {
+        // Сохраняем текущее значение RoomCount
+        if (TryGetComponent<RoomsCounter>(out var roomsCounter))
+        {
+            savedRoomCount = roomsCounter.RoomCount;
+        }
+
+        // Перезагружаем сцену
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    private void ReloadScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
     // Новый метод полного исцеления
     public void FullHeal()
     {
         currentHealth = maxHealth;
         UpdateHearts();
-        Debug.Log("Персонаж полностью исцелен!");
+
+        // Сохраняем значения перед перезагрузкой
+        if (TryGetComponent<RoomsCounter>(out var roomsCounter))
+        {
+            savedRoomCount = roomsCounter.RoomCount;
+        }
+        savedHealth = maxHealth;
+
+        ReloadScene();
     }
 
     public void TakeDamage(int amount = 1)
@@ -72,6 +107,15 @@ public class HealthSystem : MonoBehaviour
 
         currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth);
         UpdateHearts();
+
+        // Сохраняем значения перед перезагрузкой
+        if (TryGetComponent<RoomsCounter>(out var roomsCounter))
+        {
+            savedRoomCount = roomsCounter.RoomCount;
+        }
+        savedHealth = 1; // Всегда 1 HP после лечения
+
+        ReloadScene();
     }
 
     private void UpdateHearts()
@@ -85,8 +129,12 @@ public class HealthSystem : MonoBehaviour
         }
     }
 
-    private void Die()
+    public void Die()
     {
+        // Сбрасываем сохраненные значения
+        savedRoomCount = 0;
+        savedHealth = 0;
+
         if (saveZonePoint == null)
         {
             Debug.LogError("Cannot teleport - SaveZonePoint not found!");
@@ -94,18 +142,15 @@ public class HealthSystem : MonoBehaviour
         }
 
         cameraPointSystem.StopAllMovement();
-
-        // Телепортируем игрока
         transform.position = saveZonePoint.position;
         transform.rotation = saveZonePoint.rotation;
 
-        // Спавним дополнительный префаб (если задан)
         if (spawnPrefab != null)
         {
             Instantiate(spawnPrefab, saveZonePoint.position, saveZonePoint.rotation);
         }
 
-        Debug.Log("Player teleported to save zone!");
+        //ReloadScene(); // Перезагружаем сцену после смерти
     }
 
     [ContextMenu("Test Damage")]
@@ -120,7 +165,6 @@ public class HealthSystem : MonoBehaviour
         Heal();
     }
 
-    // Добавляем контекстное меню для тестирования полного исцеления
     [ContextMenu("Test Full Heal")]
     private void TestFullHeal()
     {
