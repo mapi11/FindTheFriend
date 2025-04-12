@@ -1,0 +1,29 @@
+using TMPro;
+using UnityEngine;
+
+public class RoomsCounter : MonoBehaviour
+{
+    public int RoomCount = 0;
+    public TextMeshProUGUI RoomCountTxt;
+
+    private void Update()
+    {
+        UpdateRoomCountText();
+    }
+
+    // Метод для обновления текста
+    private void UpdateRoomCountText()
+    {
+        if (RoomCountTxt != null)
+        {
+            RoomCountTxt.text = "Room: " + RoomCount.ToString();
+        }
+    }
+
+    // Метод для увеличения счетчика
+    public void IncreaseRoomCount()
+    {
+        RoomCount++;
+        UpdateRoomCountText();
+    }
+}

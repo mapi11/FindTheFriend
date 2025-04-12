@@ -272,11 +272,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba6618412052f794c8dbe84253fd66d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spotLight: {fileID: 2273002602594510835}
-  minMaxIntensity: 1.5
-  minMaxRange: 25
-  currentCharge: 100
+  flashlightLight: {fileID: 2273002602594510835}
+  maxIntensity: 1.5
+  minIntensity: 0.3
+  maxRange: 25
+  minRange: 8
+  batteryCharge: 100
   drainSpeed: 1
+  rechargeSpeed: 10
 --- !u!114 &4237124162664046801
 MonoBehaviour:
   m_ObjectHideFlags: 0

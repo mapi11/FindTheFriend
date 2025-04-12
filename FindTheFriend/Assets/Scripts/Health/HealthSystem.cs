@@ -5,15 +5,33 @@ public class HealthSystem : MonoBehaviour
 {
     [Header("Health Settings")]
     public int maxHealth = 3;
-    [SerializeField] private int currentHealth;
+    [SerializeField] public int currentHealth;
 
     [Header("Heart References")]
     public AnimatedHeart[] hearts;
 
+    [Header("Death Settings")]
+    public GameObject spawnPrefab; // Префаб для спавна при смерти (опционально)
+
+    private Transform saveZonePoint; // Точка для телепортации
+    private CameraPointSystem cameraPointSystem;
+
     private void Start()
     {
+        cameraPointSystem = GetComponent<CameraPointSystem>();
         currentHealth = maxHealth;
         UpdateHearts();
+
+        // Находим точку сохранения по имени
+        GameObject saveZone = GameObject.Find("SaveZonePoint");
+        if (saveZone != null)
+        {
+            saveZonePoint = saveZone.transform;
+        }
+        else
+        {
+            Debug.LogError("SaveZonePoint not found in scene!");
+        }
     }
 
     private void Update()
@@ -29,15 +47,18 @@ public class HealthSystem : MonoBehaviour
         }
     }
 
+    // Новый метод полного исцеления
+    public void FullHeal()
+    {
+        currentHealth = maxHealth;
+        UpdateHearts();
+        Debug.Log("Персонаж полностью исцелен!");
+    }
+
     public void TakeDamage(int amount = 1)
     {
-        if (currentHealth <= 0) return;
-
-        currentHealth -= amount;
-        currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
+        currentHealth = Mathf.Max(0, currentHealth - amount);
         UpdateHearts();
-
-        Debug.Log($"Damage taken! Health: {currentHealth}/{maxHealth}");
 
         if (currentHealth <= 0)
         {
@@ -47,17 +68,10 @@ public class HealthSystem : MonoBehaviour
 
     public void Heal(int amount = 1)
     {
-        if (currentHealth >= maxHealth)
-        {
-            Debug.Log("Already at full health!");
-            return;
-        }
+        if (currentHealth >= maxHealth) return;
 
-        currentHealth += amount;
-        currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
+        currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth);
         UpdateHearts();
-
-        Debug.Log($"Healed! Health: {currentHealth}/{maxHealth}");
     }
 
     private void UpdateHearts()
@@ -73,10 +87,25 @@ public class HealthSystem : MonoBehaviour
 
     private void Die()
     {
-        Debug.Log("Player died!");
-        // Здесь можно добавить логику смерти:
-        // Time.timeScale = 0; // Пауза игры
-        // ShowGameOverScreen();
+        if (saveZonePoint == null)
+        {
+            Debug.LogError("Cannot teleport - SaveZonePoint not found!");
+            return;
+        }
+
+        cameraPointSystem.StopAllMovement();
+
+        // Телепортируем игрока
+        transform.position = saveZonePoint.position;
+        transform.rotation = saveZonePoint.rotation;
+
+        // Спавним дополнительный префаб (если задан)
+        if (spawnPrefab != null)
+        {
+            Instantiate(spawnPrefab, saveZonePoint.position, saveZonePoint.rotation);
+        }
+
+        Debug.Log("Player teleported to save zone!");
     }
 
     [ContextMenu("Test Damage")]
@@ -89,5 +118,12 @@ public class HealthSystem : MonoBehaviour
     private void TestHeal()
     {
         Heal();
+    }
+
+    // Добавляем контекстное меню для тестирования полного исцеления
+    [ContextMenu("Test Full Heal")]
+    private void TestFullHeal()
+    {
+        FullHeal();
     }
 }

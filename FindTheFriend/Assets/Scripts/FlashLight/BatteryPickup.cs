@@ -2,34 +2,23 @@ using UnityEngine;
 
 public class BatteryPickup : MonoBehaviour
 {
-    [Header("Battery Settings")]
-    public float chargeAmount = 25f; // Сколько заряда добавляет эта батарейка
-    public GameObject pickupEffect; // Эффект при подборе (опционально)
+    [Header("Settings")]
+    public float rechargeAmount = 25f;
+    public AudioClip pickupSound;
 
-    private void OnMouseDown() // Вызывается при клике ЛКМ по объекту с коллайдером
+    private void OnMouseDown()
     {
-        FlashlightBattery flashlight = FindObjectOfType<FlashlightBattery>();
+        FlashlightSystem flashlight = FindObjectOfType<FlashlightSystem>();
         if (flashlight != null)
         {
-            flashlight.AddCharge(chargeAmount);
+            flashlight.RechargeBattery(rechargeAmount);
 
-            // Воспроизводим эффект
-            if (pickupEffect != null)
+            if (pickupSound != null)
             {
-                Instantiate(pickupEffect, transform.position, Quaternion.identity);
+                AudioSource.PlayClipAtPoint(pickupSound, transform.position);
             }
 
-            // Уничтожаем батарейку
             Destroy(gameObject);
-
-            Debug.Log("Battery picked up!");
         }
-    }
-
-    // Визуализация в редакторе
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.green;
-        Gizmos.DrawWireSphere(transform.position, 0.2f);
     }
 }

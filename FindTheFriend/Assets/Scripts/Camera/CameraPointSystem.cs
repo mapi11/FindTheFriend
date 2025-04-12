@@ -18,14 +18,18 @@ public class CameraPointSystem : MonoBehaviour
     private GameObject _currentActiveRoom;
     private GameObject _roomToDestroy;
     private List<CameraDoorPoint> _usedDoors = new List<CameraDoorPoint>();
-
-    // Добавляем объявление переменной
     private Vector3 _targetPosition;
+
+    HealthSystem _healthSystem;
+    RoomsCounter roomsCounter;
 
     private void Awake()
     {
         InitializeSystem();
         CreateRoomsContainerIfNeeded();
+
+        _healthSystem = GetComponent<HealthSystem>();
+        roomsCounter = GetComponent<RoomsCounter>();
     }
 
     private void Update()
@@ -127,7 +131,7 @@ public class CameraPointSystem : MonoBehaviour
         door.MarkAsUsed();
         _usedDoors.Add(door);
 
-        // Move to approach point
+        // Move to approach point (первая точка)
         yield return MoveToPosition(door.approachPoint);
 
         // Handle room transition
@@ -147,8 +151,19 @@ public class CameraPointSystem : MonoBehaviour
                 _roomsContainer);
         }
 
-        // Move to exit point
+
+        // Вызываем OnPlayerEntered перед движением к exit point (вторая точка)
+        DoorEnemyInteraction doorInteraction = door.GetComponent<DoorEnemyInteraction>();
+        if (doorInteraction != null)
+        {
+            doorInteraction.OnPlayerEntered();
+        }
+        
+
+        // Move to exit point (вторая точка)
         yield return MoveToPosition(door.exitPoint);
+        roomsCounter.RoomCount++;
+
 
         SetNewCurrentPointAfterDoor();
     }
@@ -225,5 +240,11 @@ public class CameraPointSystem : MonoBehaviour
     {
         if (_isMoving || point == _currentPoint) return;
         StartCoroutine(MoveToPoint(point));
+    }
+
+    public void StopAllMovement()
+    {
+        StopAllCoroutines();
+        _isMoving = false;
     }
 }
