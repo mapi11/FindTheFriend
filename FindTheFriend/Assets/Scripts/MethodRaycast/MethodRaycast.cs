@@ -1,4 +1,6 @@
+using UnityEditor;
 using UnityEngine;
+using YG;
 
 public class MethodRaycast : MonoBehaviour
 {
@@ -11,6 +13,9 @@ public class MethodRaycast : MonoBehaviour
     [Header("Настройки Raycast")]
     public float raycastDistance = 3f;
     public LayerMask interactableLayer;
+
+    [Header("Yandex")]
+    public YandexGame yandex;
 
     private HealthSystem healthSystem;
     RoomsCounter RoomsCounter;
@@ -96,7 +101,7 @@ public class MethodRaycast : MonoBehaviour
         }
     }
 
-    private void WatchAddFullRevive(GameObject target)
+    public void WatchAddFullRevive(GameObject target)
     {
         Debug.Log("Объект " + target.name + " добавлен в список просмотра");
 
@@ -104,6 +109,7 @@ public class MethodRaycast : MonoBehaviour
 
         if (healthSystem != null)
         {
+            yandex._RewardedShow(0);
             healthSystem.FullHeal();
         }
         else
@@ -112,7 +118,7 @@ public class MethodRaycast : MonoBehaviour
         }
     }
 
-    private void WatchAddRevive(GameObject target)
+    public void WatchAddRevive(GameObject target)
     {
         Debug.Log("Объект " + target.name + " добавлен в список просмотра");
 
@@ -120,6 +126,7 @@ public class MethodRaycast : MonoBehaviour
 
         if (healthSystem != null)
         {
+            yandex._RewardedShow(1);
             healthSystem.Heal();
         }
         else

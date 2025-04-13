@@ -15,8 +15,8 @@ public class MouseLook : MonoBehaviour
     void Start()
     {
         // Заблокировать и скрыть курсор
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        //Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.visible = false;
 
         // Инициализация текущих углов поворота
         rotationY = transform.eulerAngles.y;
@@ -24,6 +24,9 @@ public class MouseLook : MonoBehaviour
 
     void Update()
     {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+
         // Получаем ввод от мыши
         float mouseX = Input.GetAxis("Mouse X") * sensitivity;
         float mouseY = Input.GetAxis("Mouse Y") * sensitivity;

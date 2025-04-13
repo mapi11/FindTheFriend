@@ -26,13 +26,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1653905289063718324}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.7166442, y: -0, z: -0, w: 0.69743896}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0.059999943}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6105332751985441763}
-  m_LocalEulerAnglesHint: {x: -91.556, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!108 &2273002602594510835
 Light:
   m_ObjectHideFlags: 0
@@ -186,18 +186,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flashlightLight: {fileID: 2273002602594510835}
-  maxIntensity: 1.5
+  maxIntensity: 2
   minIntensity: 0.3
-  maxRange: 25
+  maxRange: 30
   minRange: 8
   batteryCharge: 100
   drainSpeed: 1
   rechargeSpeed: 10
+  roomDifficultyMultiplier: 0.02
+  maxRoomDifficultyEffect: 0.5
   batterySlider: {fileID: 0}
   sliderFill: {fileID: 0}
-  fullChargeColor: {r: 0, g: 1, b: 0, a: 1}
-  mediumChargeColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
-  lowChargeColor: {r: 1, g: 0, b: 0, a: 1}
+  fullChargeColor: {r: 0.18371235, g: 0.3584906, b: 0.093004644, a: 1}
+  mediumChargeColor: {r: 0.5754717, g: 0.31989697, b: 0.1004361, a: 1}
+  lowChargeColor: {r: 0.5566038, g: 0.02401036, b: 0, a: 1}
   mediumThreshold: 50
   lowThreshold: 20
 --- !u!114 &4237124162664046801
@@ -213,9 +215,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   followDelay: 0.3
-  rotationSpeed: 8
+  rotationSpeed: 10
   alignOnStart: 1
-  flashlightForwardAxis: {x: 0, y: 0, z: 10}
+  flashlightForwardAxis: {x: 0, y: -10, z: 0}
 --- !u!114 &7365420894820213680
 MonoBehaviour:
   m_ObjectHideFlags: 0

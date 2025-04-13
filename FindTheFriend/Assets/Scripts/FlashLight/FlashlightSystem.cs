@@ -5,9 +5,9 @@ public class FlashlightSystem : MonoBehaviour
 {
     [Header("Light Settings")]
     public Light flashlightLight;
-    [Range(0.5f, 2f)] public float maxIntensity = 1.5f;
+    [Range(0.5f, 4f)] public float maxIntensity = 1.5f;
     [Range(0.1f, 0.5f)] public float minIntensity = 0.3f;
-    [Range(15f, 30f)] public float maxRange = 25f;
+    [Range(15f, 50f)] public float maxRange = 25f;
     [Range(5f, 10f)] public float minRange = 8f;
 
     [Header("Battery Settings")]
@@ -15,9 +15,15 @@ public class FlashlightSystem : MonoBehaviour
     public float drainSpeed = 2f;
     public float rechargeSpeed = 10f;
 
+    [Header("Room Difficulty Settings")]
+    [Tooltip("Base multiplier for drainSpeed increase per room")]
+    public float roomDifficultyMultiplier = 0.02f;
+    [Tooltip("Maximum drainSpeed increase from rooms (percentage)")]
+    public float maxRoomDifficultyEffect = 0.5f;
+
     [Header("UI Settings")]
     public Slider batterySlider;
-    [SerializeField] private Image sliderFill; // Теперь приватное с сериализацией
+    [SerializeField] private Image sliderFill;
     public Color fullChargeColor = Color.green;
     public Color mediumChargeColor = Color.yellow;
     public Color lowChargeColor = Color.red;
@@ -25,14 +31,23 @@ public class FlashlightSystem : MonoBehaviour
     [Range(0, 100)] public int lowThreshold = 20;
 
     private HealthSystem _healthSystem;
+    private RoomsCounter _roomsCounter;
+    private float _baseDrainSpeed;
     private bool _isOn = true;
 
     private void Start()
     {
         _healthSystem = FindObjectOfType<HealthSystem>();
+        _roomsCounter = FindObjectOfType<RoomsCounter>();
+
         if (_healthSystem == null)
         {
-            Debug.LogError("HealthSystem не найден в сцене!");
+            Debug.LogError("HealthSystem not found in scene!");
+        }
+
+        if (_roomsCounter == null)
+        {
+            Debug.LogError("RoomsCounter not found in scene!");
         }
 
         if (flashlightLight == null)
@@ -40,6 +55,7 @@ public class FlashlightSystem : MonoBehaviour
             flashlightLight = GetComponent<Light>();
         }
 
+        _baseDrainSpeed = drainSpeed;
         InitializeBatteryUI();
         UpdateLightParameters();
     }
@@ -48,7 +64,6 @@ public class FlashlightSystem : MonoBehaviour
     {
         if (batterySlider != null)
         {
-            // Автоматически находим Fill если не назначен
             if (sliderFill == null)
             {
                 sliderFill = batterySlider.fillRect.GetComponent<Image>();
@@ -65,10 +80,22 @@ public class FlashlightSystem : MonoBehaviour
     {
         if (CanDrainBattery())
         {
+            UpdateRoomDifficultyEffect();
             UpdateBatteryCharge();
         }
 
         UpdateLightParameters();
+    }
+
+    private void UpdateRoomDifficultyEffect()
+    {
+        if (_roomsCounter == null) return;
+
+        float difficultyEffect = Mathf.Min(
+            _roomsCounter.RoomCount * roomDifficultyMultiplier,
+            maxRoomDifficultyEffect);
+
+        drainSpeed = _baseDrainSpeed * (1 + difficultyEffect);
     }
 
     private bool CanDrainBattery()
@@ -90,7 +117,7 @@ public class FlashlightSystem : MonoBehaviour
 
     private void BatteryDepleted()
     {
-        Debug.Log("Батарея разряжена!");
+        Debug.Log("Battery depleted!");
 
         if (_healthSystem != null && _healthSystem.currentHealth > 0)
         {
@@ -162,7 +189,6 @@ public class FlashlightSystem : MonoBehaviour
         }
     }
 
-    // Для автоматической настройки в редакторе
     private void OnValidate()
     {
         if (batterySlider != null && sliderFill == null)
