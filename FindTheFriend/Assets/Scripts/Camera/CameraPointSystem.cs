@@ -131,13 +131,6 @@ public class CameraPointSystem : MonoBehaviour
         door.MarkAsUsed();
         _usedDoors.Add(door);
 
-        // Вызываем OnPlayerEntered перед движением к exit point (вторая точка)
-        //DoorEnemyInteraction doorInteraction = door.GetComponent<DoorEnemyInteraction>();
-        //if (doorInteraction != null)
-        //{
-        //    doorInteraction.OnPlayerEntered();
-        //}
-
         // Move to approach point (первая точка)
         yield return MoveToPosition(door.approachPoint);
 
@@ -158,21 +151,34 @@ public class CameraPointSystem : MonoBehaviour
                 _roomsContainer);
         }
 
-
-        // Вызываем OnPlayerEntered перед движением к exit point (вторая точка)
+        // Вызываем OnPlayerEntered перед движением к exit point
         DoorEnemyInteraction doorInteraction = door.GetComponent<DoorEnemyInteraction>();
         if (doorInteraction != null)
         {
             doorInteraction.OnPlayerEntered();
         }
 
-
         // Move to exit point (вторая точка)
         yield return MoveToPosition(door.exitPoint);
         roomsCounter.RoomCount++;
 
+        // Обновляем список точек после создания новой комнаты
+        FindAllPoints();
 
-        SetNewCurrentPointAfterDoor();
+        // Устанавливаем exitPoint как текущую точку вместо поиска ближайшей
+        if (_currentPoint != null)
+            _currentPoint.SetSelected(false);
+
+        _currentPoint = door.exitPoint.GetComponent<CameraPoint>();
+        if (_currentPoint != null)
+        {
+            _currentPoint.SetSelected(true);
+        }
+        else
+        {
+            // Если exitPoint не имеет CameraPoint, тогда используем старую логику
+            SetNewCurrentPointAfterDoor();
+        }
     }
 
     private IEnumerator DestroyRoomWithDelay(GameObject room)
@@ -185,17 +191,22 @@ public class CameraPointSystem : MonoBehaviour
         }
     }
 
-    private IEnumerator MoveToPoint(CameraPoint point)
+    private IEnumerator MoveToPoint(CameraPoint newPoint)
     {
         _isMoving = true;
 
+        // 1. Отключаем старую точку (включаем её индикатор)
         if (_currentPoint != null)
-            _currentPoint.SetSelected(false);
+            _currentPoint.SetSelected(false);  // Теперь это ВКЛЮЧАЕТ индикатор (т.к. state=false)
 
-        yield return MoveToPosition(point.transform);
+        // 2. Двигаемся к новой точке
+        yield return MoveToPosition(newPoint.transform);
 
-        _currentPoint = point;
-        point.SetSelected(true);
+        // 3. Включаем новую точку (выключаем её индикатор)
+        newPoint.SetSelected(true);  // Теперь это ВЫКЛЮЧАЕТ индикатор (т.к. state=true)
+        _currentPoint = newPoint;
+
+        _isMoving = false;
     }
 
     private IEnumerator MoveToPosition(Transform target)
@@ -203,9 +214,19 @@ public class CameraPointSystem : MonoBehaviour
         _targetPosition = target.position;
         _isMoving = true;
 
-        while (_isMoving)
+        while (Vector3.Distance(transform.position, _targetPosition) > arrivalThreshold)
+        {
+            transform.position = Vector3.MoveTowards(
+                transform.position,
+                _targetPosition,
+                moveSpeed * Time.deltaTime);
             yield return null;
+        }
+
+        transform.position = _targetPosition;
+        _isMoving = false;
     }
+
 
     private void SetNewCurrentPointAfterDoor()
     {
