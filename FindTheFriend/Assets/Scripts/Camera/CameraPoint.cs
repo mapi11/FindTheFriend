@@ -19,10 +19,4 @@ public class CameraPoint : MonoBehaviour
         else
             OnDeselected?.Invoke(this);  // ”ведомл€ем систему, что точка больше не активна
     }
-
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawSphere(transform.position, 0.1f);
-    }
 }
