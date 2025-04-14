@@ -75,7 +75,7 @@ public class HealthSystem : MonoBehaviour
     }
 
     // Новый метод полного исцеления
-    public void FullHeal()
+    public void FullHealRevive()
     {
         currentHealth = maxHealth;
         UpdateHearts();
@@ -101,7 +101,7 @@ public class HealthSystem : MonoBehaviour
         }
     }
 
-    public void Heal(int amount = 1)
+    public void HealRevive(int amount = 1)
     {
         if (currentHealth >= maxHealth) return;
 
@@ -116,6 +116,14 @@ public class HealthSystem : MonoBehaviour
         savedHealth = 1; // Всегда 1 HP после лечения
 
         ReloadScene();
+    }
+
+    public void Heal(int amount = 1)
+    {
+        if (currentHealth >= maxHealth) return;
+
+        currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth);
+        UpdateHearts();
     }
 
     private void UpdateHearts()
@@ -162,12 +170,12 @@ public class HealthSystem : MonoBehaviour
     [ContextMenu("Test Heal")]
     private void TestHeal()
     {
-        Heal();
+        HealRevive();
     }
 
     [ContextMenu("Test Full Heal")]
     private void TestFullHeal()
     {
-        FullHeal();
+        FullHealRevive();
     }
 }

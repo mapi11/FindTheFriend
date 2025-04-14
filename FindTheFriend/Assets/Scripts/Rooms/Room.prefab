@@ -239,7 +239,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefabsToSpawn:
   - {fileID: 5983100534332725075, guid: e8874b8752a988445a1905ac108f58e3, type: 3}
-  - {fileID: 8011316112825706504, guid: 7918d35a44601894d93a43e8e75e63fa, type: 3}
+  - {fileID: 6246594720403128185, guid: 2145adafb06108a49be547bb1aab4b32, type: 3}
   spawnPoints:
   - {fileID: 8481892046368594712}
   - {fileID: 45247200843188128}

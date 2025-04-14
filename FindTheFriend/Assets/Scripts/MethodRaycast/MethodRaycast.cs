@@ -110,7 +110,7 @@ public class MethodRaycast : MonoBehaviour
         if (healthSystem != null)
         {
             yandex._RewardedShow(0);
-            healthSystem.FullHeal();
+            healthSystem.FullHealRevive();
         }
         else
         {
@@ -127,7 +127,7 @@ public class MethodRaycast : MonoBehaviour
         if (healthSystem != null)
         {
             yandex._RewardedShow(1);
-            healthSystem.Heal();
+            healthSystem.HealRevive();
         }
         else
         {
