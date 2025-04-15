@@ -31,16 +31,6 @@ public class HealthSystem : MonoBehaviour
         currentHealth = savedHealth > 0 ? savedHealth : maxHealth; // Восстанавливаем здоровье или ставим максимум
 
         UpdateHearts();
-
-        GameObject saveZone = GameObject.Find("SaveZonePoint");
-        if (saveZone != null)
-        {
-            saveZonePoint = saveZone.transform;
-        }
-        else
-        {
-            Debug.LogError("SaveZonePoint not found in scene!");
-        }
     }
 
     private void Update()
@@ -69,10 +59,10 @@ public class HealthSystem : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
-    private void ReloadScene()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-    }
+    //private void ReloadScene()
+    //{
+    //    SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    //}
 
     // Новый метод полного исцеления
     public void FullHealRevive()
@@ -87,7 +77,7 @@ public class HealthSystem : MonoBehaviour
         }
         savedHealth = maxHealth;
 
-        ReloadScene();
+        //ReloadScene();
     }
 
     public void TakeDamage(int amount = 1)
@@ -115,7 +105,7 @@ public class HealthSystem : MonoBehaviour
         }
         savedHealth = 1; // Всегда 1 HP после лечения
 
-        ReloadScene();
+        //ReloadScene();
     }
 
     public void Heal(int amount = 1)
@@ -139,6 +129,16 @@ public class HealthSystem : MonoBehaviour
 
     public void Die()
     {
+        GameObject saveZone = GameObject.Find("SaveZonePoint");
+        if (saveZone != null)
+        {
+            saveZonePoint = saveZone.transform;
+        }
+        else
+        {
+            Debug.LogError("SaveZonePoint not found in scene!");
+        }
+
         // Сбрасываем сохраненные значения
         savedRoomCount = 0;
         savedHealth = 0;

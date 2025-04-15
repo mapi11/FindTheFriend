@@ -71,13 +71,14 @@ public class MethodRaycast : MonoBehaviour
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
 
-        if (Physics.Raycast(ray, out hit, raycastDistance, interactableLayer))
-        {
-            if (Input.GetMouseButtonDown(0))
+
+            if (Physics.Raycast(ray, out hit, raycastDistance, interactableLayer))
             {
-                ExecuteMethod(hit.transform.gameObject);
+                if (Input.GetMouseButtonDown(0))
+                {
+                    ExecuteMethod(hit.transform.gameObject);
+                }
             }
-        }
     }
 
     private void ExecuteMethod(GameObject targetObject)
@@ -93,7 +94,7 @@ public class MethodRaycast : MonoBehaviour
         else if (reloadScene)
         {
             ReloadScene();
-            RoomsCounter.RoomCount = 0;
+            //RoomsCounter.RoomCount = 0;
         }
         else if (customAction)
         {
@@ -110,6 +111,7 @@ public class MethodRaycast : MonoBehaviour
         if (healthSystem != null)
         {
             yandex._RewardedShow(0);
+            ReloadScene();
             healthSystem.FullHealRevive();
         }
         else
@@ -127,6 +129,7 @@ public class MethodRaycast : MonoBehaviour
         if (healthSystem != null)
         {
             yandex._RewardedShow(1);
+            ReloadScene();
             healthSystem.HealRevive();
         }
         else

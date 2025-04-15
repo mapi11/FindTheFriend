@@ -802,6 +802,7 @@ Transform:
   - {fileID: 4350446412839826157}
   - {fileID: 8015752564744381206}
   - {fileID: 263825464862171178}
+  - {fileID: 2786962945186615423}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6247258297146736903
@@ -853,9 +854,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a71459973aba2164fa8c4ac035faf218, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 1
+  moveSpeed: 1.5
   arrivalThreshold: 0.1
   roomDestroyDelay: 1
+  footstepsSound: {fileID: 8300000, guid: f4b410b3df3b1324abd88e123b60fafb, type: 3}
+  footstepsVolume: 0.2
+  footstepsPitch: 1
+  footstepsInterval: 0.6
   _roomsContainer: {fileID: 0}
 --- !u!114 &4679946260034887795
 MonoBehaviour:
@@ -923,7 +928,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fpsText: {fileID: 856933430980797760}
-  targetFPS: 120
+  targetFPS: 600
 --- !u!1 &3848968927304712810
 GameObject:
   m_ObjectHideFlags: 0
@@ -2218,6 +2223,68 @@ MonoBehaviour:
   m_PointerBehavior: 0
   m_CursorLockBehavior: 0
   m_ScrollDeltaPerTick: 6
+--- !u!1001 &4043184109637397008
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 5585210139833085340}
+    m_Modifications:
+    - target: {fileID: 2211564899198745197, guid: caf9732433f4dc044845763962493607, type: 3}
+      propertyPath: m_Name
+      value: YandexGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 2211564899198745199, guid: caf9732433f4dc044845763962493607, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2211564899198745199, guid: caf9732433f4dc044845763962493607, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2211564899198745199, guid: caf9732433f4dc044845763962493607, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2211564899198745199, guid: caf9732433f4dc044845763962493607, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2211564899198745199, guid: caf9732433f4dc044845763962493607, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2211564899198745199, guid: caf9732433f4dc044845763962493607, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2211564899198745199, guid: caf9732433f4dc044845763962493607, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2211564899198745199, guid: caf9732433f4dc044845763962493607, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2211564899198745199, guid: caf9732433f4dc044845763962493607, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2211564899198745199, guid: caf9732433f4dc044845763962493607, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: caf9732433f4dc044845763962493607, type: 3}
+--- !u!4 &2786962945186615423 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2211564899198745199, guid: caf9732433f4dc044845763962493607, type: 3}
+  m_PrefabInstance: {fileID: 4043184109637397008}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7558619331762243854
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2240,7 +2307,11 @@ PrefabInstance:
       objectReference: {fileID: 953022811627304977}
     - target: {fileID: 2855623331421759550, guid: a57a7d594098315489a4e63fcaa4f19c, type: 3}
       propertyPath: maxIntensity
-      value: 4
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 2855623331421759550, guid: a57a7d594098315489a4e63fcaa4f19c, type: 3}
+      propertyPath: minIntensity
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2855623331421759550, guid: a57a7d594098315489a4e63fcaa4f19c, type: 3}
       propertyPath: batterySlider

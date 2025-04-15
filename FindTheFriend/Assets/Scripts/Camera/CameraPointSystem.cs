@@ -9,6 +9,12 @@ public class CameraPointSystem : MonoBehaviour
     public float arrivalThreshold = 0.1f;
     public float roomDestroyDelay = 0.5f;
 
+    [Header("Footstep Sounds")]
+    public AudioClip[] footstepSounds;
+    [Range(0f, 1f)] public float footstepsVolume = 0.5f;
+    [Range(0.5f, 2f)] public float footstepsPitch = 1f;
+    [Range(0.1f, 1f)] public float footstepsInterval = 0.4f;
+
     [Header("References")]
     [SerializeField] private Transform _roomsContainer;
 
@@ -19,37 +25,26 @@ public class CameraPointSystem : MonoBehaviour
     private GameObject _roomToDestroy;
     private List<CameraDoorPoint> _usedDoors = new List<CameraDoorPoint>();
     private Vector3 _targetPosition;
+    private AudioSource _audioSource;
+    private Coroutine _footstepsCoroutine;
+    private Coroutine _movementCoroutine;
+    private int _lastFootstepIndex = -1;
 
-    HealthSystem _healthSystem;
-    RoomsCounter roomsCounter;
+    private HealthSystem _healthSystem;
+    private RoomsCounter _roomsCounter;
 
     private void Awake()
     {
+        SetupAudioSource();
         InitializeSystem();
-        CreateRoomsContainerIfNeeded();
-
-        _healthSystem = GetComponent<HealthSystem>();
-        roomsCounter = GetComponent<RoomsCounter>();
     }
 
-    private void Update()
+    private void SetupAudioSource()
     {
-        if (Input.GetMouseButtonDown(0) && !_isMoving)
-            HandleClick();
-
-        if (_isMoving)
-        {
-            transform.position = Vector3.MoveTowards(
-                transform.position,
-                _targetPosition,
-                moveSpeed * Time.deltaTime);
-
-            if (Vector3.Distance(transform.position, _targetPosition) <= arrivalThreshold)
-            {
-                transform.position = _targetPosition;
-                _isMoving = false;
-            }
-        }
+        _audioSource = gameObject.AddComponent<AudioSource>();
+        _audioSource.playOnAwake = false;
+        _audioSource.volume = footstepsVolume;
+        _audioSource.pitch = footstepsPitch;
     }
 
     private void InitializeSystem()
@@ -57,6 +52,10 @@ public class CameraPointSystem : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
 
+        _healthSystem = GetComponent<HealthSystem>();
+        _roomsCounter = GetComponent<RoomsCounter>();
+
+        CreateRoomsContainerIfNeeded();
         FindAllPoints();
         SetInitialPoint();
     }
@@ -69,19 +68,195 @@ public class CameraPointSystem : MonoBehaviour
         }
     }
 
+    #region Footsteps System
+    private void StartFootsteps()
+    {
+        if (footstepSounds == null || footstepSounds.Length == 0 || _footstepsCoroutine != null) return;
+        _footstepsCoroutine = StartCoroutine(PlayFootstepsLoop());
+    }
+
+    private void StopFootsteps()
+    {
+        if (_footstepsCoroutine != null)
+        {
+            StopCoroutine(_footstepsCoroutine);
+            _footstepsCoroutine = null;
+        }
+    }
+
+    private IEnumerator PlayFootstepsLoop()
+    {
+        while (true)
+        {
+            PlayRandomFootstep();
+            yield return new WaitForSeconds(footstepsInterval);
+        }
+    }
+
+    private void PlayRandomFootstep()
+    {
+        if (footstepSounds.Length == 0) return;
+
+        int randomIndex;
+        do
+        {
+            randomIndex = Random.Range(0, footstepSounds.Length);
+        }
+        while (randomIndex == _lastFootstepIndex && footstepSounds.Length > 1);
+
+        _lastFootstepIndex = randomIndex;
+        AudioClip clip = footstepSounds[randomIndex];
+
+        if (clip != null)
+        {
+            _audioSource.PlayOneShot(clip);
+        }
+    }
+    #endregion
+
+    #region Movement System
+    private void Update()
+    {
+        if (Input.GetMouseButtonDown(0) && !_isMoving)
+        {
+            HandleClick();
+        }
+    }
+
+    private void HandleClick()
+    {
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        if (!Physics.Raycast(ray, out RaycastHit hit)) return;
+
+        var door = hit.collider.GetComponent<CameraDoorPoint>();
+        if (door != null && door.CanBeUsed())
+        {
+            SafeStartCoroutine(ProcessDoorTransition(door));
+            return;
+        }
+
+        var point = hit.collider.GetComponent<CameraPoint>();
+        if (point != null && point != _currentPoint)
+        {
+            SafeStartCoroutine(MoveToPoint(point));
+        }
+    }
+
+    private void SafeStartCoroutine(IEnumerator coroutine)
+    {
+        if (_movementCoroutine != null)
+        {
+            StopCoroutine(_movementCoroutine);
+        }
+        _movementCoroutine = StartCoroutine(coroutine);
+    }
+
+    private IEnumerator ProcessDoorTransition(CameraDoorPoint door)
+    {
+        if (door == null || _usedDoors.Contains(door)) yield break;
+
+        _isMoving = true;
+        StartFootsteps();
+        door.MarkAsUsed();
+        _usedDoors.Add(door);
+
+        yield return MoveToPosition(door.approachPoint);
+
+        if (door.roomPrefabs.Length > 0 && door.roomSpawnPoint != null)
+        {
+            if (_currentActiveRoom != null)
+            {
+                _roomToDestroy = _currentActiveRoom;
+                StartCoroutine(DestroyRoomWithDelay(_roomToDestroy));
+            }
+
+            int index = Random.Range(0, door.roomPrefabs.Length);
+            _currentActiveRoom = Instantiate(
+                door.roomPrefabs[index],
+                door.roomSpawnPoint.position,
+                door.roomSpawnPoint.rotation,
+                _roomsContainer);
+        }
+
+        var doorInteraction = door.GetComponent<DoorEnemyInteraction>();
+        doorInteraction?.OnPlayerEntered();
+
+        yield return MoveToPosition(door.exitPoint);
+        _roomsCounter.RoomCount++;
+
+        if (door._exitStartRoom)
+        {
+            GameObject startRoom = GameObject.Find("StartRoom");
+            if (startRoom != null) Destroy(startRoom);
+        }
+
+        FindAllPoints();
+        UpdateCurrentPointAfterDoor(door);
+
+        StopFootsteps();
+        _isMoving = false;
+    }
+
+    private IEnumerator MoveToPoint(CameraPoint newPoint)
+    {
+        if (newPoint == null) yield break;
+
+        _isMoving = true;
+        StartFootsteps();
+
+        if (_currentPoint != null)
+            _currentPoint.SetSelected(false);
+
+        yield return MoveToPosition(newPoint.transform);
+
+        newPoint.SetSelected(true);
+        _currentPoint = newPoint;
+
+        StopFootsteps();
+        _isMoving = false;
+    }
+
+    private IEnumerator MoveToPosition(Transform target)
+    {
+        if (target == null) yield break;
+
+        _targetPosition = target.position;
+        _isMoving = true;
+
+        while (Vector3.Distance(transform.position, _targetPosition) > arrivalThreshold)
+        {
+            transform.position = Vector3.MoveTowards(
+                transform.position,
+                _targetPosition,
+                moveSpeed * Time.deltaTime);
+            yield return null;
+        }
+
+        transform.position = _targetPosition;
+        _isMoving = false;
+    }
+    #endregion
+
+    #region Helper Methods
     private void FindAllPoints()
     {
         _allPoints.Clear();
-        _allPoints.AddRange(FindObjectsOfType<CameraPoint>());
+        var foundPoints = FindObjectsOfType<CameraPoint>();
 
-        foreach (var point in _allPoints)
+        foreach (var point in foundPoints)
         {
-            point.OnSelected += OnPointSelected;
+            if (point != null)
+            {
+                point.OnSelected += OnPointSelected;
+                _allPoints.Add(point);
+            }
         }
     }
 
     private void SetInitialPoint()
     {
+        if (_allPoints.Count == 0) return;
+
         CameraPoint closest = null;
         float minDistance = Mathf.Infinity;
 
@@ -103,130 +278,22 @@ public class CameraPointSystem : MonoBehaviour
         }
     }
 
-    private void HandleClick()
+    private void UpdateCurrentPointAfterDoor(CameraDoorPoint door)
     {
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(ray, out RaycastHit hit))
-        {
-            var door = hit.collider.GetComponent<CameraDoorPoint>();
-            if (door != null && door.CanBeUsed())
-            {
-                StartCoroutine(ProcessDoorTransition(door));
-                return;
-            }
-
-            var point = hit.collider.GetComponent<CameraPoint>();
-            if (point != null && point != _currentPoint)
-            {
-                StartCoroutine(MoveToPoint(point));
-            }
-        }
-    }
-
-    private IEnumerator ProcessDoorTransition(CameraDoorPoint door)
-    {
-        if (_usedDoors.Contains(door)) yield break;
-
-        _isMoving = true;
-        door.MarkAsUsed();
-        _usedDoors.Add(door);
-
-        // Move to approach point (первая точка)
-        yield return MoveToPosition(door.approachPoint);
-
-        // Handle room transition
-        if (door.roomPrefabs.Length > 0 && door.roomSpawnPoint != null)
-        {
-            if (_currentActiveRoom != null)
-            {
-                _roomToDestroy = _currentActiveRoom;
-                StartCoroutine(DestroyRoomWithDelay(_roomToDestroy));
-            }
-
-            int index = Random.Range(0, door.roomPrefabs.Length);
-            _currentActiveRoom = Instantiate(
-                door.roomPrefabs[index],
-                door.roomSpawnPoint.position,
-                door.roomSpawnPoint.rotation,
-                _roomsContainer);
-        }
-
-        // Вызываем OnPlayerEntered перед движением к exit point
-        DoorEnemyInteraction doorInteraction = door.GetComponent<DoorEnemyInteraction>();
-        if (doorInteraction != null)
-        {
-            doorInteraction.OnPlayerEntered();
-        }
-
-        // Move to exit point (вторая точка)
-        yield return MoveToPosition(door.exitPoint);
-        roomsCounter.RoomCount++;
-
-        // Обновляем список точек после создания новой комнаты
-        FindAllPoints();
-
-        // Устанавливаем exitPoint как текущую точку вместо поиска ближайшей
         if (_currentPoint != null)
             _currentPoint.SetSelected(false);
 
-        _currentPoint = door.exitPoint.GetComponent<CameraPoint>();
-        if (_currentPoint != null)
+        CameraPoint exitPoint = door.exitPoint.GetComponent<CameraPoint>();
+        if (exitPoint != null)
         {
+            _currentPoint = exitPoint;
             _currentPoint.SetSelected(true);
         }
         else
         {
-            // Если exitPoint не имеет CameraPoint, тогда используем старую логику
             SetNewCurrentPointAfterDoor();
         }
     }
-
-    private IEnumerator DestroyRoomWithDelay(GameObject room)
-    {
-        yield return new WaitForSeconds(roomDestroyDelay);
-
-        if (room != null && room != _currentActiveRoom)
-        {
-            Destroy(room);
-        }
-    }
-
-    private IEnumerator MoveToPoint(CameraPoint newPoint)
-    {
-        _isMoving = true;
-
-        // 1. Отключаем старую точку (включаем её индикатор)
-        if (_currentPoint != null)
-            _currentPoint.SetSelected(false);  // Теперь это ВКЛЮЧАЕТ индикатор (т.к. state=false)
-
-        // 2. Двигаемся к новой точке
-        yield return MoveToPosition(newPoint.transform);
-
-        // 3. Включаем новую точку (выключаем её индикатор)
-        newPoint.SetSelected(true);  // Теперь это ВЫКЛЮЧАЕТ индикатор (т.к. state=true)
-        _currentPoint = newPoint;
-
-        _isMoving = false;
-    }
-
-    private IEnumerator MoveToPosition(Transform target)
-    {
-        _targetPosition = target.position;
-        _isMoving = true;
-
-        while (Vector3.Distance(transform.position, _targetPosition) > arrivalThreshold)
-        {
-            transform.position = Vector3.MoveTowards(
-                transform.position,
-                _targetPosition,
-                moveSpeed * Time.deltaTime);
-            yield return null;
-        }
-
-        transform.position = _targetPosition;
-        _isMoving = false;
-    }
-
 
     private void SetNewCurrentPointAfterDoor()
     {
@@ -255,6 +322,24 @@ public class CameraPointSystem : MonoBehaviour
         }
     }
 
+    private IEnumerator DestroyRoomWithDelay(GameObject room)
+    {
+        yield return new WaitForSeconds(roomDestroyDelay);
+
+        if (room != null && room != _currentActiveRoom)
+        {
+            Destroy(room);
+        }
+    }
+    #endregion
+
+    #region Event Handlers
+    private void OnPointSelected(CameraPoint point)
+    {
+        if (_isMoving || point == _currentPoint) return;
+        SafeStartCoroutine(MoveToPoint(point));
+    }
+
     private void OnDestroy()
     {
         foreach (var point in _allPoints)
@@ -262,17 +347,23 @@ public class CameraPointSystem : MonoBehaviour
             if (point != null)
                 point.OnSelected -= OnPointSelected;
         }
-    }
 
-    private void OnPointSelected(CameraPoint point)
-    {
-        if (_isMoving || point == _currentPoint) return;
-        StartCoroutine(MoveToPoint(point));
+        if (_movementCoroutine != null)
+            StopCoroutine(_movementCoroutine);
+
+        StopFootsteps();
     }
+    #endregion
 
     public void StopAllMovement()
     {
-        StopAllCoroutines();
+        if (_movementCoroutine != null)
+        {
+            StopCoroutine(_movementCoroutine);
+            _movementCoroutine = null;
+        }
+
+        StopFootsteps();
         _isMoving = false;
     }
 }

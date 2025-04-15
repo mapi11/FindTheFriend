@@ -15,6 +15,8 @@ public class CameraDoorPoint : MonoBehaviour
     public Material usedDoorMaterial;
     public Collider doorCollider;
 
+    public bool _exitStartRoom;
+
     private bool _isUsed = false;
 
     public bool CanBeUsed() => !_isUsed;

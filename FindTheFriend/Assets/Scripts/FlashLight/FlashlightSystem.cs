@@ -5,8 +5,8 @@ public class FlashlightSystem : MonoBehaviour
 {
     [Header("Light Settings")]
     public Light flashlightLight;
-    [Range(0.5f, 4f)] public float maxIntensity = 1.5f;
-    [Range(0.1f, 0.5f)] public float minIntensity = 0.3f;
+    [Range(3f, 9f)] public float maxIntensity = 9f;
+    [Range(1f, 3f)] public float minIntensity = 0.3f;
     [Range(15f, 50f)] public float maxRange = 25f;
     [Range(5f, 10f)] public float minRange = 8f;
 
