@@ -6,27 +6,41 @@ public class MouseLook : MonoBehaviour
     public float sensitivity = 2.0f;
 
     [Header("Rotate")]
-    public float minVerticalAngle = -80f; // Минимальный угол наклона вниз
-    public float maxVerticalAngle = 80f;  // Максимальный угол наклона вверх
+    public float minVerticalAngle = -80f;
+    public float maxVerticalAngle = 80f;
 
-    private float rotationX = 0f; // Текущий угол вращения по вертикали
-    private float rotationY = 0f; // Текущий угол вращения по горизонтали
+    private float rotationX = 0f;
+    private float rotationY = 0f;
+    public bool isCameraActive = true; // Флаг активности управления камерой
+
+    FlashlightSystem flashlightSystem;
 
     void Start()
     {
-        // Заблокировать и скрыть курсор
-        //Cursor.lockState = CursorLockMode.Locked;
-        //Cursor.visible = false;
+        flashlightSystem = FindObjectOfType<FlashlightSystem>();
 
-        // Инициализация текущих углов поворота
+        // Инициализация курсора и углов поворота
+        SetCameraActive(true);
         rotationY = transform.eulerAngles.y;
     }
 
     void Update()
     {
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        // Переключение режима по нажатию Esc
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            SetCameraActive(!isCameraActive);
+        }
 
+        // Если управление камерой активно - обрабатываем ввод
+        if (isCameraActive)
+        {
+            HandleCameraRotation();
+        }
+    }
+
+    void HandleCameraRotation()
+    {
         // Получаем ввод от мыши
         float mouseX = Input.GetAxis("Mouse X") * sensitivity;
         float mouseY = Input.GetAxis("Mouse Y") * sensitivity;
@@ -42,10 +56,29 @@ public class MouseLook : MonoBehaviour
         transform.localEulerAngles = new Vector3(rotationX, rotationY, 0f);
     }
 
+    void SetCameraActive(bool active)
+    {
+        isCameraActive = active;
+
+        if (active)
+        {
+            flashlightSystem._pause = false;
+            // Режим управления камерой - курсор скрыт и заблокирован
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+        }
+        else
+        {
+            flashlightSystem._pause = true;
+            // Режим UI - курсор виден и свободен
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
+    }
+
     void OnDisable()
     {
         // При отключении скрипта разблокируем курсор
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
+        SetCameraActive(false);
     }
 }

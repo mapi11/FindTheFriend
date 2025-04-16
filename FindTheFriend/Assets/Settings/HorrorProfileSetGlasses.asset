@@ -64,7 +64,7 @@ MonoBehaviour:
     m_OverrideState: 1
     m_Value: 25
   tintColor:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: {r: 0.3207547, g: 0.3207547, b: 0.3207547, a: 1}
   bloomMip:
     m_OverrideState: 0
@@ -303,8 +303,8 @@ MonoBehaviour:
     m_OverrideState: 1
     m_Value: 1
   response:
-    m_OverrideState: 0
-    m_Value: 0.8
+    m_OverrideState: 1
+    m_Value: 0.1
   texture:
     m_OverrideState: 0
     m_Value: {fileID: 0}

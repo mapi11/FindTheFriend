@@ -34,6 +34,7 @@ public class FlashlightSystem : MonoBehaviour
     private RoomsCounter _roomsCounter;
     private float _baseDrainSpeed;
     private bool _isOn = true;
+    public bool _pause = false;
 
     private void Start()
     {
@@ -105,13 +106,16 @@ public class FlashlightSystem : MonoBehaviour
 
     private void UpdateBatteryCharge()
     {
-        batteryCharge -= drainSpeed * Time.deltaTime;
-        batteryCharge = Mathf.Clamp(batteryCharge, 0, 100);
-        UpdateBatteryUI();
-
-        if (batteryCharge <= 0)
+        if (_pause != true)
         {
-            BatteryDepleted();
+            batteryCharge -= drainSpeed * Time.deltaTime;
+            batteryCharge = Mathf.Clamp(batteryCharge, 0, 100);
+            UpdateBatteryUI();
+
+            if (batteryCharge <= 0)
+            {
+                BatteryDepleted();
+            }
         }
     }
 

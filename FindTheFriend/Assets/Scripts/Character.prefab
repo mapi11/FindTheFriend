@@ -778,6 +778,7 @@ GameObject:
   - component: {fileID: 2808513969242217951}
   - component: {fileID: 9222223739203631281}
   - component: {fileID: 483288056414147825}
+  - component: {fileID: 4130031155208454310}
   m_Layer: 0
   m_Name: Character
   m_TagString: Untagged
@@ -857,10 +858,15 @@ MonoBehaviour:
   moveSpeed: 1.5
   arrivalThreshold: 0.1
   roomDestroyDelay: 1
-  footstepsSound: {fileID: 8300000, guid: f4b410b3df3b1324abd88e123b60fafb, type: 3}
+  footstepSounds:
+  - {fileID: 8300000, guid: 9f16f1a47f7e8af43bde4f39657b3a6a, type: 3}
+  - {fileID: 8300000, guid: b48aa452ac944454c97aa2258241ddec, type: 3}
+  - {fileID: 8300000, guid: f4b410b3df3b1324abd88e123b60fafb, type: 3}
+  - {fileID: 8300000, guid: 96b7f670082a90c40a848f39d9b5da04, type: 3}
+  - {fileID: 8300000, guid: d0a81bcac5ce1fc48b4302a7d8fbebf4, type: 3}
   footstepsVolume: 0.2
   footstepsPitch: 1
-  footstepsInterval: 0.6
+  footstepsInterval: 0.5
   _roomsContainer: {fileID: 0}
 --- !u!114 &4679946260034887795
 MonoBehaviour:
@@ -877,6 +883,7 @@ MonoBehaviour:
   sensitivity: 2
   minVerticalAngle: -80
   maxVerticalAngle: 80
+  isCameraActive: 1
 --- !u!114 &2808513969242217951
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -929,6 +936,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fpsText: {fileID: 856933430980797760}
   targetFPS: 600
+--- !u!114 &4130031155208454310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3274035612543802965}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2aae7defcf68ad84eb88de6f6e17e82d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  menuPrefab: {fileID: 5269967382869746483, guid: 2da6df57a78ee954b9f8b30eb7157c96, type: 3}
+  spawnPosition: {fileID: 6250374341669653920}
+  isMenuOpen: 0
 --- !u!1 &3848968927304712810
 GameObject:
   m_ObjectHideFlags: 0
@@ -2234,6 +2256,10 @@ PrefabInstance:
     - target: {fileID: 2211564899198745197, guid: caf9732433f4dc044845763962493607, type: 3}
       propertyPath: m_Name
       value: YandexGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 2211564899198745197, guid: caf9732433f4dc044845763962493607, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2211564899198745199, guid: caf9732433f4dc044845763962493607, type: 3}
       propertyPath: m_LocalPosition.x
