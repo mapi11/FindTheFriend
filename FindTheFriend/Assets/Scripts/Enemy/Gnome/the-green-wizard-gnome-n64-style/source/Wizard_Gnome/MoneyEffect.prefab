@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4250608295738737064}
   - component: {fileID: 4250394412826395746}
   m_Layer: 0
-  m_Name: Bubbles
+  m_Name: MoneyEffect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

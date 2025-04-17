@@ -102,21 +102,4 @@ public class ObjectRandomSpawner : MonoBehaviour
         }
         _spawnedInstances.Clear();
     }
-
-    // Для визуализации точек в редакторе
-    private void OnDrawGizmosSelected()
-    {
-        if (spawnPoints != null)
-        {
-            Gizmos.color = Color.blue;
-            foreach (var point in spawnPoints)
-            {
-                if (point != null)
-                {
-                    Gizmos.DrawWireSphere(point.position, 0.3f);
-                    Gizmos.DrawIcon(point.position + Vector3.up * 0.5f, "GlassesIcon");
-                }
-            }
-        }
-    }
 }

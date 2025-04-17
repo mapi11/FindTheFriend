@@ -285,6 +285,7 @@ MonoBehaviour:
   roomSpawnPoint: {fileID: 7674006984872032907}
   roomPrefabs:
   - {fileID: 8355531086153619813, guid: 9aef5d7e854067048a26e8d75244dc6b, type: 3}
+  - {fileID: 3346968511597294549, guid: 3a4ba452022bc8c4bb2cb7ea02569cbb, type: 3}
   doorModel: {fileID: 0}
   usedDoorMaterial: {fileID: 0}
   doorCollider: {fileID: 0}

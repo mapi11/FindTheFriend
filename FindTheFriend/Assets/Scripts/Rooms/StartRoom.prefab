@@ -104378,10 +104378,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6211191668292752693}
     m_Modifications:
-    - target: {fileID: 330927136542696796, guid: c7e3efe5d62984f448ebccd36ed1daf1, type: 3}
-      propertyPath: maxRotationAngle
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 731010743476641814, guid: c7e3efe5d62984f448ebccd36ed1daf1, type: 3}
       propertyPath: m_LocalPosition.x
       value: -4.326
