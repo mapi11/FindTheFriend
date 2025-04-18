@@ -3,14 +3,28 @@ using UnityEngine;
 
 public class MoneyCount : MonoBehaviour
 {
+    public static MoneyCount Instance { get; private set; }
+    public static event System.Action OnMoneyChanged;
+
     [SerializeField] private int _currentMoney = 0;
     private List<MoneyPoint> _allMoneyPoints = new List<MoneyPoint>();
 
     private void Awake()
     {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+            return;
+        }
+
         FindAllMoneyPoints();
     }
 
+    // Остальной код остается без изменений...
     private void FindAllMoneyPoints()
     {
         _allMoneyPoints.Clear();
@@ -35,6 +49,7 @@ public class MoneyCount : MonoBehaviour
     public void AddMoney(int amount)
     {
         _currentMoney += amount;
+        OnMoneyChanged?.Invoke();
         Debug.Log($"Добавлено денег: {amount}. Всего: {_currentMoney}");
     }
 

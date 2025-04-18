@@ -19,8 +19,21 @@ public class HealthSystem : MonoBehaviour
     private static int savedRoomCount = 0;
     private static int savedHealth = 0; // Добавляем сохранение здоровья
 
+    //Gnome attack
+    [Header("Gnomes attack")]
+    [SerializeField] private GameObject prefabToSpawn; // Префаб для спавна
+    [SerializeField] private Transform spawnParent;    // Родитель в иерархии
+    [SerializeField] private Vector3 spawnOffset;      // Смещение от позиции вызова
+
+    [Header("Timing Settings")]
+    [SerializeField] private float destroyDelay = 2f;  // Задержка перед удалением
+
+    FlashlightSystem flashlightSystem;
+
+
     private void Start()
     {
+        flashlightSystem = FindAnyObjectByType<FlashlightSystem>();
         cameraPointSystem = GetComponent<CameraPointSystem>();
 
         // Восстанавливаем сохраненные значения
@@ -129,6 +142,9 @@ public class HealthSystem : MonoBehaviour
 
     public void Die()
     {
+        flashlightSystem.batteryCharge = 0;
+        GmomeAttack();
+
         GameObject saveZone = GameObject.Find("SaveZonePoint");
         if (saveZone != null)
         {
@@ -177,5 +193,34 @@ public class HealthSystem : MonoBehaviour
     private void TestFullHeal()
     {
         FullHealRevive();
+    }
+
+    // Метод для вызова из других скриптов или анимаций
+    public void GmomeAttack()
+    {
+        if (prefabToSpawn == null)
+        {
+            Debug.LogWarning("Prefab to spawn is not assigned!", this);
+            return;
+        }
+
+        // Определяем позицию спавна
+        //Vector3 spawnPosition = transform.position + spawnOffset;
+
+        //// Спавним префаб
+        //GameObject spawnedObject = Instantiate(
+        //    prefabToSpawn,
+        //    spawnPosition,
+        //    Quaternion.identity,
+        //    spawnParent);
+
+        // Определяем позицию спавна
+        //Vector3 spawnPosition = transform.position + spawnOffset;
+
+        // Спавним префаб
+        GameObject spawnedObject = Instantiate(prefabToSpawn,spawnParent.transform);
+
+        // Уничтожаем через заданное время
+        Destroy(spawnedObject, destroyDelay);
     }
 }
