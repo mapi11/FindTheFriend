@@ -186,7 +186,7 @@ public class CameraPointSystem : MonoBehaviour
 
         if (door._exitStartRoom)
         {
-            GameObject startRoom = GameObject.Find("StartRoom");
+            GameObject startRoom = GameObject.Find("StartRoom(Clone)");
             if (startRoom != null) Destroy(startRoom);
         }
 

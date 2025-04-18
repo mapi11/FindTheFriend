@@ -7,11 +7,13 @@ public class LookAtCamera : MonoBehaviour
 
     void Start()
     {
-        FindMainCamera();
+        //FindMainCamera();
     }
 
     void Update()
     {
+        FindMainCamera();
+
         // Если камера найдена и флаг включен - поворачиваем объект к камере
         if (lookAtCamera && mainCamera != null)
         {

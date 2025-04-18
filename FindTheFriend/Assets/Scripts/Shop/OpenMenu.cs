@@ -49,8 +49,8 @@ public class OpenMenu : MonoBehaviour
 
             mouseLook.isCameraActive = true;
 
-            //Cursor.lockState = CursorLockMode.Locked;
-            //Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
         }
     }
 

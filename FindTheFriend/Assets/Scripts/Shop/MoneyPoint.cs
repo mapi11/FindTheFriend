@@ -17,11 +17,11 @@ public class MoneyPoint : MonoBehaviour
 
     private void Start()
     {
-        _moneySystem = FindObjectOfType<MoneyCount>();
-        if (_moneySystem == null)
-        {
-            Debug.LogError("MoneyCount не найден на сцене!");
-        }
+        //_moneySystem = FindObjectOfType<MoneyCount>();
+        //if (_moneySystem == null)
+        //{
+        //    Debug.LogError("MoneyCount не найден на сцене!");
+        //}
     }
 
     public void SetSelected(bool state)
@@ -36,6 +36,8 @@ public class MoneyPoint : MonoBehaviour
 
     private void CollectMoney()
     {
+        _moneySystem = FindObjectOfType<MoneyCount>();
+
         if (_moneySystem != null)
         {
             _moneySystem.AddMoney(moneyValue);

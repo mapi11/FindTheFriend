@@ -22,22 +22,22 @@ public class MethodRaycast : MonoBehaviour
 
     private void Start()
     {
-        // Находим HealthSystem на объекте Character
-        GameObject character = GameObject.Find("Character");
-        if (character != null)
-        {
-            healthSystem = character.GetComponent<HealthSystem>();
-            if (healthSystem == null)
-            {
-                Debug.LogError("HealthSystem не найден на объекте Character!");
-            }
+        //// Находим HealthSystem на объекте Character
+        //GameObject character = GameObject.Find("Character");
+        //if (character != null)
+        //{
+        //    healthSystem = character.GetComponent<HealthSystem>();
+        //    if (healthSystem == null)
+        //    {
+        //        Debug.LogError("HealthSystem не найден на объекте Character!");
+        //    }
 
-            RoomsCounter = GetComponent<RoomsCounter>();
-        }
-        else
-        {
-            Debug.LogError("Объект Character не найден в сцене!");
-        }
+        //    RoomsCounter = GetComponent<RoomsCounter>();
+        //}
+        //else
+        //{
+        //    Debug.LogError("Объект Character не найден в сцене!");
+        //}
     }
 
     public void TeleportToSecondPoint()
