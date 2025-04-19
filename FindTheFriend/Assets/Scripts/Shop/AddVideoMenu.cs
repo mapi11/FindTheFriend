@@ -18,6 +18,11 @@ public class AddVideoMenu : MonoBehaviour
     [SerializeField] private GameObject _shopWindow;
     [SerializeField] private TextMeshProUGUI _txtMoneyCount;
 
+    [Header("Open settings")]
+    [SerializeField] private Button _btnOpenSettings;
+    [SerializeField] private Button _btnCloseSettings;
+    [SerializeField] private GameObject _settingsWindow;
+
     GlassesScript _glassesScript;
     FlashlightSystem _flashlightSystem;
     HealthSystem healthSystem;
@@ -43,6 +48,9 @@ public class AddVideoMenu : MonoBehaviour
 
         _btnOpenShop.onClick.AddListener(OpenShop);
         _btnCloseShop.onClick.AddListener(CloseShop);
+
+        _btnOpenSettings.onClick.AddListener(OpenSettings);
+        _btnCloseSettings.onClick.AddListener(CloseSettings);
     }
 
     private void Update()
@@ -109,6 +117,15 @@ public class AddVideoMenu : MonoBehaviour
     private void CloseShop()
     {
         _shopWindow.SetActive(false);
+    }
+
+    private void OpenSettings()
+    {
+        _settingsWindow.SetActive(true);
+    }
+    private void CloseSettings()
+    {
+        _settingsWindow.SetActive(false);
     }
 
     public void DelSave()

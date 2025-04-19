@@ -90204,7 +90204,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8877764558795220985, guid: e8874b8752a988445a1905ac108f58e3, type: 3}
       propertyPath: roomPrefabs.Array.size
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8877764558795220985, guid: e8874b8752a988445a1905ac108f58e3, type: 3}
       propertyPath: 'roomPrefabs.Array.data[0]'
@@ -90213,7 +90213,11 @@ PrefabInstance:
     - target: {fileID: 8877764558795220985, guid: e8874b8752a988445a1905ac108f58e3, type: 3}
       propertyPath: 'roomPrefabs.Array.data[1]'
       value: 
-      objectReference: {fileID: 6139297850595107468, guid: 38787f9d483f5db42b770c4da72fcf4b, type: 3}
+      objectReference: {fileID: 3346968511597294549, guid: 3a4ba452022bc8c4bb2cb7ea02569cbb, type: 3}
+    - target: {fileID: 8877764558795220985, guid: e8874b8752a988445a1905ac108f58e3, type: 3}
+      propertyPath: 'roomPrefabs.Array.data[2]'
+      value: 
+      objectReference: {fileID: 7797941415684937697, guid: 096706c50ecf6284894874409fc542e1, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
