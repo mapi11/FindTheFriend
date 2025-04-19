@@ -43,6 +43,7 @@ public class MethodRaycast : MonoBehaviour
     public void TeleportToSecondPoint()
     {
         GameObject character = GameObject.Find("Character");
+
         if (character == null)
         {
             Debug.LogError("Объект Character не найден!");
@@ -105,6 +106,7 @@ public class MethodRaycast : MonoBehaviour
     public void WatchAddFullRevive(GameObject target)
     {
         Debug.Log("Объект " + target.name + " добавлен в список просмотра");
+        healthSystem = FindAnyObjectByType<HealthSystem>();
 
         //TeleportToSecondPoint();
 
@@ -123,7 +125,7 @@ public class MethodRaycast : MonoBehaviour
     public void WatchAddRevive(GameObject target)
     {
         Debug.Log("Объект " + target.name + " добавлен в список просмотра");
-
+        healthSystem = FindAnyObjectByType<HealthSystem>();
         //TeleportToSecondPoint();
 
         if (healthSystem != null)

@@ -7,7 +7,7 @@ public class OpenMenu : MonoBehaviour
     public Transform spawnPosition;    // Позиция для спавна меню
 
     [Header("Menu State")]
-    [SerializeField] private bool isMenuOpen = false; // Текущее состояние меню
+    public bool isMenuOpen = false; // Текущее состояние меню
 
     private GameObject currentMenuInstance;  // Ссылка на экземпляр мен
 

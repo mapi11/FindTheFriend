@@ -33,8 +33,11 @@ public class CameraPointSystem : MonoBehaviour
     private HealthSystem _healthSystem;
     private RoomsCounter _roomsCounter;
 
+    private OpenMenu _openMenu;
+
     private void Awake()
     {
+        _openMenu = FindAnyObjectByType<OpenMenu>(); // »ли получить ссылку другим способом
         SetupAudioSource();
         InitializeSystem();
     }
@@ -125,6 +128,9 @@ public class CameraPointSystem : MonoBehaviour
 
     private void HandleClick()
     {
+        // ≈сли меню открыто - игнорируем клики
+        if (_openMenu != null && _openMenu.isMenuOpen) return;
+
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         if (!Physics.Raycast(ray, out RaycastHit hit)) return;
 

@@ -6,7 +6,7 @@ public class HealthSystem : MonoBehaviour
 {
     [Header("Health Settings")]
     public int maxHealth = 3;
-    [SerializeField] public int currentHealth;
+    public int currentHealth;
 
     [Header("Heart References")]
     public AnimatedHeart[] hearts;

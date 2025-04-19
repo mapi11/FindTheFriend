@@ -1102,8 +1102,16 @@ MonoBehaviour:
     price: 20
     spawnParent: {fileID: 8966178130296966624}
   - skinID: 2
+    skinPrefab: {fileID: 3276409352301628838, guid: ee1e9e63fc8251f47b1e3ebdb249f3a6, type: 3}
+    price: 40
+    spawnParent: {fileID: 8966178130296966624}
+  - skinID: 3
     skinPrefab: {fileID: 3276409352301628838, guid: b49a5b45777ee7046bc4f89d8b950ab1, type: 3}
     price: 50
+    spawnParent: {fileID: 8966178130296966624}
+  - skinID: 4
+    skinPrefab: {fileID: 3276409352301628838, guid: 39e2cf51c1f179f4a82746ae6ac037b3, type: 3}
+    price: 69
     spawnParent: {fileID: 8966178130296966624}
 --- !u!1 &3848968927304712810
 GameObject:
@@ -2707,7 +2715,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2211564899198745197, guid: caf9732433f4dc044845763962493607, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2211564899198745199, guid: caf9732433f4dc044845763962493607, type: 3}
       propertyPath: m_LocalPosition.x

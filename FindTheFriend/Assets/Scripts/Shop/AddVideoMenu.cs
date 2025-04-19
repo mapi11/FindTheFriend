@@ -46,19 +46,20 @@ public class AddVideoMenu : MonoBehaviour
         _txtMoneyCount.text = moneyCount._currentMoney.ToString();
     }
 
-    public void AddVideoAdd()
-    {
-        YandexGame.RewVideoShow(0);
-    }
+    //public void AddVideoAdd()
+    //{
+    //    YandexGame.RewVideoShow(0);
+    //}
 
     public void GlassesAdd()
     {
 
             _glassesScript.GetGlasses();
 
-            AddVideoAdd();
+            //AddVideoAdd();
+        YandexGame.RewVideoShow(0);
 
-            openMenu.CloseMenu();
+        openMenu.CloseMenu();
         
     }
 
@@ -67,9 +68,10 @@ public class AddVideoMenu : MonoBehaviour
 
             _flashlightSystem.batteryCharge = 100;
 
-            AddVideoAdd();
+            //AddVideoAdd();
+        YandexGame.RewVideoShow(0);
 
-            openMenu.CloseMenu();
+        openMenu.CloseMenu();
         
     }
 
@@ -79,7 +81,8 @@ public class AddVideoMenu : MonoBehaviour
         {
             healthSystem.Heal();
 
-            AddVideoAdd();
+            //AddVideoAdd();
+            YandexGame.RewVideoShow(0);
 
             openMenu.CloseMenu();
         }
