@@ -16,7 +16,7 @@ public class RoomsCounter : MonoBehaviour
     {
         if (RoomCountTxt != null)
         {
-            RoomCountTxt.text = "Room: " + RoomCount.ToString();
+            RoomCountTxt.text = "Комната: " + RoomCount.ToString();
         }
     }
 

@@ -115,6 +115,9 @@ public class MethodRaycast : MonoBehaviour
             yandex._RewardedShow(0);
             ReloadScene();
             healthSystem.FullHealRevive();
+
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
         }
         else
         {
@@ -133,6 +136,9 @@ public class MethodRaycast : MonoBehaviour
             yandex._RewardedShow(1);
             ReloadScene();
             healthSystem.HealRevive();
+
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
         }
         else
         {
