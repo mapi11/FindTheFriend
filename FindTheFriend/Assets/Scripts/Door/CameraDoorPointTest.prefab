@@ -286,6 +286,7 @@ MonoBehaviour:
   roomPrefabs:
   - {fileID: 8355531086153619813, guid: 9aef5d7e854067048a26e8d75244dc6b, type: 3}
   - {fileID: 3346968511597294549, guid: 3a4ba452022bc8c4bb2cb7ea02569cbb, type: 3}
+  - {fileID: 7797941415684937697, guid: 096706c50ecf6284894874409fc542e1, type: 3}
   doorModel: {fileID: 0}
   usedDoorMaterial: {fileID: 0}
   doorCollider: {fileID: 0}
