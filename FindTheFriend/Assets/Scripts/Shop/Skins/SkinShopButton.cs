@@ -2,76 +2,118 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
+[RequireComponent(typeof(Button))]
 public class SkinShopButton : MonoBehaviour
 {
     [SerializeField] private int _skinID;
+
+    [Header("UI References")]
     [SerializeField] private TextMeshProUGUI _priceText;
-    [SerializeField] private TextMeshProUGUI _buttonText;
-    [SerializeField] private Image _buttonImage;
-    [SerializeField] private Button _button;
+    [SerializeField] private TextMeshProUGUI _statusText;
 
     [Header("Colors")]
-    [SerializeField] private Color _purchasedColor = Color.green;
-    [SerializeField] private Color _selectedColor = Color.blue;
+    [SerializeField] private Color _purchasedColor = new Color(0.2f, 0.8f, 0.2f); // Зелёный
+    [SerializeField] private Color _selectedColor = new Color(0.2f, 0.4f, 0.8f);  // Синий
     [SerializeField] private Color _normalColor = Color.white;
 
-    private MoneyCount _moneyCount;
+    private Button _button;
+    private Image _buttonImage;
+
+    private void Awake()
+    {
+        // Получаем обязательные компоненты
+        _button = GetComponent<Button>();
+        _buttonImage = GetComponent<Image>();
+
+        // Назначаем обработчик клика
+        _button.onClick.AddListener(OnButtonClick);
+
+        // Проверяем ссылки
+        if (_priceText == null || _statusText == null)
+        {
+            Debug.LogError($"Не назначены текстовые элементы для кнопки скина {_skinID}", this);
+        }
+    }
 
     private void Start()
     {
-        _moneyCount = FindObjectOfType<MoneyCount>();
-        UpdateButtonState();
-
-        // Подписываемся на событие смены скина
-        SkinManager.Instance.OnSkinChanged += UpdateButtonState;
-
-        _button.onClick.AddListener(OnButtonClick);
+        UpdateButtonUI();
+        SkinManager.Instance.OnSkinChanged += UpdateButtonUI;
     }
 
-    private void OnDestroy()
+    private void OnButtonClick()
     {
-        // Отписываемся при уничтожении объекта
-        if (SkinManager.Instance != null)
+        if (IsPurchased())
         {
-            SkinManager.Instance.OnSkinChanged -= UpdateButtonState;
-        }
-    }
-
-    public void OnButtonClick()
-    {
-        if (SkinManager.Instance.IsSkinPurchased(_skinID))
-        {
-            // Если этот скин уже выбран - ничего не делаем
-            if (SkinManager.Instance.GetCurrentSkinID() == _skinID)
-                return;
-
-            SkinManager.Instance.ApplySkin(_skinID);
+            if (!IsSelected())
+            {
+                SkinManager.Instance.ApplySkin(_skinID);
+            }
         }
         else
         {
-            if (_moneyCount != null && SkinManager.Instance.TryPurchaseSkin(_skinID, _moneyCount))
-            {
-                UpdateButtonState();
-            }
+            TryPurchaseSkin();
         }
     }
 
-    private void UpdateButtonState()
+    private void UpdateButtonUI()
     {
-        bool isPurchased = SkinManager.Instance.IsSkinPurchased(_skinID);
-        bool isSelected = SkinManager.Instance.GetCurrentSkinID() == _skinID;
+        if (_priceText == null || _statusText == null) return;
 
-        if (isPurchased)
+        bool isPurchased = IsPurchased();
+        bool isSelected = IsSelected();
+        bool isDefault = _skinID == SkinManager.Instance.GetDefaultSkinID();
+
+        // Обновление текста цены
+        if (isDefault)
         {
-            _priceText.text = "Куплено";
-            _buttonText.text = isSelected ? "Selected" : "Select";
-            _buttonImage.color = isSelected ? _selectedColor : _purchasedColor;
+            _priceText.text = "СТАНДАРТ";
+            _priceText.color = Color.gray;
+        }
+        else if (isPurchased)
+        {
+            _priceText.text = "КУПЛЕНО";
+            _priceText.color = _purchasedColor;
         }
         else
         {
             _priceText.text = SkinManager.Instance.GetSkinPrice(_skinID).ToString();
-            _buttonText.text = "Buy";
-            _buttonImage.color = _normalColor;
+            _priceText.color = Color.white;
         }
+
+        // Обновление статуса
+        _statusText.text = isSelected ? "ВЫБРАНО" : "ВЫБРАТЬ";
+
+        // Обновление цвета кнопки
+        _buttonImage.color = isSelected ? _selectedColor :
+                           isPurchased ? _purchasedColor : _normalColor;
+    }
+
+    private bool TryPurchaseSkin()
+    {
+        MoneyCount moneyCount = MoneyCount.Instance;
+        if (moneyCount == null) return false;
+
+        return SkinManager.Instance.TryPurchaseSkin(_skinID, moneyCount);
+    }
+
+    private bool IsPurchased()
+    {
+        return SkinManager.Instance.IsSkinPurchased(_skinID) ||
+               _skinID == SkinManager.Instance.GetDefaultSkinID();
+    }
+
+    private bool IsSelected()
+    {
+        return SkinManager.Instance.GetCurrentSkinID() == _skinID;
+    }
+
+    private void OnDestroy()
+    {
+        if (SkinManager.Instance != null)
+        {
+            SkinManager.Instance.OnSkinChanged -= UpdateButtonUI;
+        }
+        _button.onClick.RemoveListener(OnButtonClick);
     }
 }

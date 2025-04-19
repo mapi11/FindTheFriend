@@ -578,9 +578,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _skinID: 0
   _priceText: {fileID: 4829627661469300111}
-  _buttonText: {fileID: 6688869170804277899}
-  _buttonImage: {fileID: 1783117355227111154}
-  _button: {fileID: 6541631805828608036}
+  _statusText: {fileID: 6688869170804277899}
   _purchasedColor: {r: 0.6132076, g: 0.6132076, b: 0.6132076, a: 1}
   _selectedColor: {r: 0.16981131, g: 0.16981131, b: 0.16981131, a: 1}
   _normalColor: {r: 0.30980393, g: 0.30980393, b: 0.30980393, a: 1}

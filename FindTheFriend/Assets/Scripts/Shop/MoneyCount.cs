@@ -77,11 +77,12 @@ public class MoneyCount : MonoBehaviour
         if (_currentMoney >= amount)
         {
             _currentMoney -= amount;
-            SaveMoney(); // Сохраняем после изменения
+            SaveMoney();
             OnMoneyChanged?.Invoke();
-            Debug.Log($"Потрачено денег: {amount}. Осталось: {_currentMoney}");
+            Debug.Log($"Потрачено {amount} денег. Осталось: {_currentMoney}");
             return true;
         }
+        Debug.LogWarning($"Недостаточно денег: нужно {amount}, есть {_currentMoney}");
         return false;
     }
 
@@ -114,4 +115,5 @@ public class MoneyCount : MonoBehaviour
             SaveMoney();
         }
     }
+
 }
