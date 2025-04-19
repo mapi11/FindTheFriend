@@ -10,6 +10,7 @@ public class AddVideoMenu : MonoBehaviour
     [SerializeField] private Button _btnGlassesAdd;
     [SerializeField] private Button _btnFlashlightAdd;
     [SerializeField] private Button _btnHealthAdd;
+    [SerializeField] private Button _btnMoneyAdd;
 
     [Header("Open shop")]
     [SerializeField] private Button _btnOpenShop;
@@ -37,6 +38,9 @@ public class AddVideoMenu : MonoBehaviour
     {
         _btnGlassesAdd.onClick.AddListener(GlassesAdd);
         _btnFlashlightAdd.onClick.AddListener(FlashlightAdd);
+        _btnHealthAdd.onClick.AddListener(HealthAdd);
+        _btnMoneyAdd.onClick.AddListener(MoneyAdd);
+
         _btnOpenShop.onClick.AddListener(OpenShop);
         _btnCloseShop.onClick.AddListener(CloseShop);
     }
@@ -86,6 +90,16 @@ public class AddVideoMenu : MonoBehaviour
 
             openMenu.CloseMenu();
         }
+    }
+
+    public void MoneyAdd()
+    {
+        moneyCount._currentMoney += 5;
+
+        //AddVideoAdd();
+        YandexGame.RewVideoShow(0);
+
+        openMenu.CloseMenu();
     }
 
     private void OpenShop()

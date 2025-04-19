@@ -166,6 +166,9 @@ public class CameraPointSystem : MonoBehaviour
         door.MarkAsUsed();
         _usedDoors.Add(door);
 
+        // Включаем анимацию открытия для всех дверей
+        SetAllDoorsOpenState(true);
+
         yield return MoveToPosition(door.approachPoint);
 
         if (door.roomPrefabs.Length > 0 && door.roomSpawnPoint != null)
@@ -188,6 +191,10 @@ public class CameraPointSystem : MonoBehaviour
         doorInteraction?.OnPlayerEntered();
 
         yield return MoveToPosition(door.exitPoint);
+
+        // Выключаем анимацию открытия для всех дверей
+        SetAllDoorsOpenState(false);
+
         _roomsCounter.RoomCount++;
 
         if (door._exitStartRoom)
@@ -201,6 +208,33 @@ public class CameraPointSystem : MonoBehaviour
 
         StopFootsteps();
         _isMoving = false;
+    }
+
+    // Новый метод для управления состоянием всех дверей
+    private void SetAllDoorsOpenState(bool isOpen)
+    {
+        // Находим все аниматоры в сцене
+        Animator[] allAnimators = FindObjectsOfType<Animator>();
+
+        foreach (Animator animator in allAnimators)
+        {
+            // Проверяем есть ли параметр "open" в аниматоре
+            if (HasParameter(animator, "open"))
+            {
+                animator.SetBool("open", isOpen);
+            }
+        }
+    }
+
+    // Вспомогательный метод для проверки параметров аниматора
+    private bool HasParameter(Animator animator, string paramName)
+    {
+        foreach (AnimatorControllerParameter param in animator.parameters)
+        {
+            if (param.name == paramName && param.type == AnimatorControllerParameterType.Bool)
+                return true;
+        }
+        return false;
     }
 
     private IEnumerator MoveToPoint(CameraPoint newPoint)
