@@ -55,13 +55,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4216111052487573287}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -5}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 656330387766765963}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1 &4448796305303902356
 GameObject:
   m_ObjectHideFlags: 0
@@ -284,9 +284,7 @@ MonoBehaviour:
   exitPoint: {fileID: 6202622061329800039}
   roomSpawnPoint: {fileID: 7674006984872032907}
   roomPrefabs:
-  - {fileID: 8355531086153619813, guid: 9aef5d7e854067048a26e8d75244dc6b, type: 3}
-  - {fileID: 3346968511597294549, guid: 3a4ba452022bc8c4bb2cb7ea02569cbb, type: 3}
-  - {fileID: 7797941415684937697, guid: 096706c50ecf6284894874409fc542e1, type: 3}
+  - {fileID: 7388325756938226497, guid: 233bfc5a55941f640a9ce701744dd98f, type: 3}
   doorModel: {fileID: 0}
   usedDoorMaterial: {fileID: 0}
   doorCollider: {fileID: 0}

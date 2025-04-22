@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class MoneyCount : MonoBehaviour
@@ -6,11 +7,18 @@ public class MoneyCount : MonoBehaviour
     public static MoneyCount Instance { get; private set; }
     public static event System.Action OnMoneyChanged;
 
+    public TextMeshProUGUI MoneyText;
+
     private const string MONEY_PREFS_KEY = "PlayerMoney";
 
     [SerializeField] private int _defaultMoney = 0; // Ќачальное количество денег (если нет сохранений)
     public int _currentMoney;
     private List<MoneyPoint> _allMoneyPoints = new List<MoneyPoint>();
+
+    private void Update()
+    {
+        MoneyText.text = _currentMoney.ToString();
+    }
 
     private void Awake()
     {

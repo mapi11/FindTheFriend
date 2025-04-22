@@ -4,6 +4,7 @@ public class LookAtCamera : MonoBehaviour
 {
     private Transform mainCamera;
     private bool lookAtCamera = true;
+    private bool cameraFound;
 
     void Start()
     {
@@ -23,18 +24,21 @@ public class LookAtCamera : MonoBehaviour
 
     void FindMainCamera()
     {
-        // Ищем объект с именем "MainCamera"
-        GameObject cameraObj = GameObject.Find("MainCamera");
+        if (cameraFound) return;
+
+        GameObject cameraObj = GameObject.FindGameObjectWithTag("MainCamera");
 
         if (cameraObj != null)
         {
             mainCamera = cameraObj.transform;
-            Debug.Log("MainCamera found and assigned");
+            cameraFound = true;
+            Debug.Log("MainCamera found and assigned", this);
         }
         else
         {
-            Debug.LogWarning("MainCamera not found in scene!");
+            Debug.LogWarning("MainCamera not found in scene!", this);
             lookAtCamera = false;
+            cameraFound = true;
         }
     }
 }
