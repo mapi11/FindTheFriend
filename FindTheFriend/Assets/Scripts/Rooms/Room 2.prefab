@@ -1228,7 +1228,6 @@ GameObject:
   - component: {fileID: 6686033975469932479}
   - component: {fileID: 3516308551796519595}
   - component: {fileID: 8513479359092495138}
-  - component: {fileID: 4230052542413241655}
   - component: {fileID: 8798338316012174199}
   m_Layer: 0
   m_Name: Book06c (5)
@@ -1305,33 +1304,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!54 &4230052542413241655
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 312603516454889011}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!65 &8798338316012174199
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2120,7 +2092,6 @@ GameObject:
   - component: {fileID: 6714296784222381661}
   - component: {fileID: 7054746739426234502}
   - component: {fileID: 1516941307894817639}
-  - component: {fileID: 4676090823150611438}
   - component: {fileID: 6645580744622619713}
   m_Layer: 0
   m_Name: Book02 (10)
@@ -2197,33 +2168,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!54 &4676090823150611438
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 428409303219749753}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!65 &6645580744622619713
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3204,7 +3148,6 @@ GameObject:
   - component: {fileID: 4198080001912165521}
   - component: {fileID: 3437482808929227074}
   - component: {fileID: 6723137579523417318}
-  - component: {fileID: 1083511148359536644}
   - component: {fileID: 2508080513125533915}
   m_Layer: 0
   m_Name: Book01 (16)
@@ -3281,33 +3224,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!54 &1083511148359536644
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 696470279869304295}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!65 &2508080513125533915
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3448,7 +3364,6 @@ GameObject:
   - component: {fileID: 4468174447926668373}
   - component: {fileID: 3723147622868068706}
   - component: {fileID: 6696507632723254842}
-  - component: {fileID: 3842636707361900872}
   - component: {fileID: 5574186322686714866}
   m_Layer: 0
   m_Name: Book01 (28)
@@ -3525,33 +3440,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!54 &3842636707361900872
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 707672692034387817}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!65 &5574186322686714866
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4476,7 +4364,6 @@ GameObject:
   - component: {fileID: 4516107630946112490}
   - component: {fileID: 1136394891851605687}
   - component: {fileID: 4678159407920792774}
-  - component: {fileID: 3056976873746029601}
   - component: {fileID: 554862410322006824}
   m_Layer: 0
   m_Name: Book10b (19)
@@ -4553,33 +4440,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!54 &3056976873746029601
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 977532681043078070}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!65 &554862410322006824
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6072,7 +5932,6 @@ GameObject:
   - component: {fileID: 2686731280694070486}
   - component: {fileID: 4526154730233676884}
   - component: {fileID: 8238129970354098415}
-  - component: {fileID: 4581995390074641861}
   - component: {fileID: 927849245987797858}
   m_Layer: 0
   m_Name: Book05c (23)
@@ -6149,33 +6008,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!54 &4581995390074641861
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1339967858341958203}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!65 &927849245987797858
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6856,7 +6688,6 @@ GameObject:
   - component: {fileID: 4961738661238621446}
   - component: {fileID: 5987854337021938684}
   - component: {fileID: 9017288333788837409}
-  - component: {fileID: 6794946726659769941}
   - component: {fileID: 1566587518907203428}
   m_Layer: 0
   m_Name: Book10c (14)
@@ -6933,33 +6764,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!54 &6794946726659769941
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1552812617765908259}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!65 &1566587518907203428
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6992,7 +6796,6 @@ GameObject:
   - component: {fileID: 4498716645320817494}
   - component: {fileID: 7171602162249777958}
   - component: {fileID: 4377518896486019003}
-  - component: {fileID: 1187453582661948647}
   - component: {fileID: 5276311668149117226}
   m_Layer: 0
   m_Name: Book10b (7)
@@ -7069,33 +6872,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!54 &1187453582661948647
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1561168180218071380}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!65 &5276311668149117226
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11211,7 +10987,6 @@ GameObject:
   - component: {fileID: 5584834633297481531}
   - component: {fileID: 1054475853841671046}
   - component: {fileID: 270206956794308496}
-  - component: {fileID: 3976406933978473977}
   - component: {fileID: 2509156281459548021}
   m_Layer: 0
   m_Name: Book06c (12)
@@ -11288,33 +11063,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!54 &3976406933978473977
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2562108794605735838}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!65 &2509156281459548021
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11617,7 +11365,6 @@ GameObject:
   - component: {fileID: 2586124932001927642}
   - component: {fileID: 2991895374066323055}
   - component: {fileID: 978070753132794115}
-  - component: {fileID: 9109723195302800815}
   - component: {fileID: 707226076512157614}
   m_Layer: 0
   m_Name: Book02 (11)
@@ -11694,33 +11441,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!54 &9109723195302800815
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2679105113672529062}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!65 &707226076512157614
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12092,7 +11812,7 @@ Transform:
   m_GameObject: {fileID: 2712652409183328180}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.025000006, z: 1.2000005}
+  m_LocalPosition: {x: 0, y: 0, z: 1.2000005}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -12627,7 +12347,6 @@ GameObject:
   - component: {fileID: 6568718770886770158}
   - component: {fileID: 1847415546084993249}
   - component: {fileID: 3273201626183466439}
-  - component: {fileID: 7921832688038216868}
   - component: {fileID: 7224044598397412419}
   m_Layer: 0
   m_Name: Book13 (1)
@@ -12704,33 +12423,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!54 &7921832688038216868
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2898974135770925546}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!65 &7224044598397412419
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12763,7 +12455,6 @@ GameObject:
   - component: {fileID: 372536518444013228}
   - component: {fileID: 8679349716281527732}
   - component: {fileID: 3005110593768357253}
-  - component: {fileID: 3257647366256845242}
   - component: {fileID: 2190774928860498732}
   m_Layer: 0
   m_Name: Book07 (7)
@@ -12840,33 +12531,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!54 &3257647366256845242
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2909871052867182256}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!65 &2190774928860498732
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13683,7 +13347,6 @@ GameObject:
   - component: {fileID: 8634420371188889403}
   - component: {fileID: 1147710552839501509}
   - component: {fileID: 6175334148965491154}
-  - component: {fileID: 5368660850167449106}
   - component: {fileID: 123146040039903934}
   m_Layer: 0
   m_Name: Book05c (4)
@@ -13760,33 +13423,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!54 &5368660850167449106
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3136700439683948770}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!65 &123146040039903934
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14190,7 +13826,6 @@ GameObject:
   - component: {fileID: 1757145533792335775}
   - component: {fileID: 647692510756349682}
   - component: {fileID: 2750467779172086602}
-  - component: {fileID: 4589047093697594549}
   - component: {fileID: 8056346689064154609}
   m_Layer: 0
   m_Name: Book09 (7)
@@ -14267,33 +13902,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!54 &4589047093697594549
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3251798774066399532}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!65 &8056346689064154609
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14589,7 +14197,6 @@ GameObject:
   - component: {fileID: 2318653142668976244}
   - component: {fileID: 5815130164538546313}
   - component: {fileID: 8038606699624853686}
-  - component: {fileID: 4593191982808408683}
   - component: {fileID: 5841593199371578308}
   m_Layer: 0
   m_Name: Book10c (6)
@@ -14666,33 +14273,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!54 &4593191982808408683
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3322539641085101658}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!65 &5841593199371578308
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16669,7 +16249,6 @@ GameObject:
   - component: {fileID: 5585339531168727550}
   - component: {fileID: 7312811516766813244}
   - component: {fileID: 862085210881675487}
-  - component: {fileID: 1106008023417519396}
   - component: {fileID: 4949374998383638708}
   m_Layer: 0
   m_Name: Book08 (6)
@@ -16746,33 +16325,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!54 &1106008023417519396
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3753779258758594934}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!65 &4949374998383638708
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18993,7 +18545,6 @@ GameObject:
   - component: {fileID: 7582031344083032805}
   - component: {fileID: 8487674030636182453}
   - component: {fileID: 197513204807623414}
-  - component: {fileID: 4348279486296164378}
   - component: {fileID: 8878296569971228786}
   m_Layer: 0
   m_Name: Book10b (18)
@@ -19070,33 +18621,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!54 &4348279486296164378
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4312376755487641986}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!65 &8878296569971228786
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19669,7 +19193,6 @@ GameObject:
   - component: {fileID: 6396997068715112094}
   - component: {fileID: 7390341372740275690}
   - component: {fileID: 5670870074112408391}
-  - component: {fileID: 8568396920708377968}
   - component: {fileID: 8711786458222534968}
   m_Layer: 0
   m_Name: Book06c (11)
@@ -19746,33 +19269,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!54 &8568396920708377968
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4428659634060612088}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!65 &8711786458222534968
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -20967,7 +20463,6 @@ GameObject:
   - component: {fileID: 606321185287682466}
   - component: {fileID: 188265481337655111}
   - component: {fileID: 7639408844177479061}
-  - component: {fileID: 4000923764553261111}
   - component: {fileID: 61064999902301816}
   m_Layer: 0
   m_Name: Book09d (10)
@@ -21044,33 +20539,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!54 &4000923764553261111
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4711608134831155393}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!65 &61064999902301816
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -22242,7 +21710,6 @@ GameObject:
   - component: {fileID: 9151564356798365840}
   - component: {fileID: 5330791016286785752}
   - component: {fileID: 8754048914739690980}
-  - component: {fileID: 8838178870068659079}
   - component: {fileID: 1668108245253758017}
   m_Layer: 0
   m_Name: Book02 (7)
@@ -22319,33 +21786,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!54 &8838178870068659079
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5000645308652567339}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!65 &1668108245253758017
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -22419,7 +21859,6 @@ GameObject:
   - component: {fileID: 6106812235360289034}
   - component: {fileID: 6530625354599145613}
   - component: {fileID: 7824217285909616675}
-  - component: {fileID: 1541385254944230736}
   - component: {fileID: 4866312851498224019}
   m_Layer: 0
   m_Name: Book10b (16)
@@ -22496,33 +21935,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!54 &1541385254944230736
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5043530718137748764}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!65 &4866312851498224019
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -24717,7 +24129,6 @@ GameObject:
   - component: {fileID: 5090068324398243301}
   - component: {fileID: 4292208560539025719}
   - component: {fileID: 169420377195648500}
-  - component: {fileID: 4917536614188593334}
   - component: {fileID: 6887062185547998882}
   m_Layer: 0
   m_Name: Book08 (4)
@@ -24794,33 +24205,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!54 &4917536614188593334
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5420297176333412540}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!65 &6887062185547998882
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -24900,7 +24284,6 @@ GameObject:
   - component: {fileID: 5411302820103147633}
   - component: {fileID: 8079529512835559527}
   - component: {fileID: 7617120780004975970}
-  - component: {fileID: 948379105779126799}
   - component: {fileID: 7079304999201705267}
   m_Layer: 0
   m_Name: Book10 (16)
@@ -24977,33 +24360,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!54 &948379105779126799
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5432747616884283961}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!65 &7079304999201705267
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -25321,7 +24677,6 @@ GameObject:
   - component: {fileID: 5175135751744605833}
   - component: {fileID: 8299918728480949003}
   - component: {fileID: 1879226273206637211}
-  - component: {fileID: 5284166048967742332}
   - component: {fileID: 7068668566578378382}
   m_Layer: 0
   m_Name: Book10b (17)
@@ -25398,33 +24753,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!54 &5284166048967742332
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5482462261459062499}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!65 &7068668566578378382
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -26470,7 +25798,6 @@ GameObject:
   - component: {fileID: 6366584967631650073}
   - component: {fileID: 4374873944792490770}
   - component: {fileID: 8438184019977692775}
-  - component: {fileID: 3278600204585530445}
   - component: {fileID: 5545722850375867563}
   m_Layer: 0
   m_Name: Book14 (1)
@@ -26547,33 +25874,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!54 &3278600204585530445
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5711379409549321701}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!65 &5545722850375867563
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -26606,7 +25906,6 @@ GameObject:
   - component: {fileID: 3632997634010676179}
   - component: {fileID: 7557426159935123355}
   - component: {fileID: 4984580643518084666}
-  - component: {fileID: 8166656037487653475}
   - component: {fileID: 1586099216373604105}
   m_Layer: 0
   m_Name: Book03 (8)
@@ -26683,33 +25982,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!54 &8166656037487653475
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5752321913321575996}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!65 &1586099216373604105
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -27526,7 +26798,6 @@ GameObject:
   - component: {fileID: 1600049994153323038}
   - component: {fileID: 6338457973011442390}
   - component: {fileID: 1420772977800351244}
-  - component: {fileID: 727502608558624779}
   - component: {fileID: 3719294437316775172}
   m_Layer: 0
   m_Name: Book10 (17)
@@ -27603,33 +26874,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!54 &727502608558624779
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5868262113464479494}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!65 &3719294437316775172
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -29580,7 +28824,6 @@ GameObject:
   - component: {fileID: 8172604454526084853}
   - component: {fileID: 4142304882644489470}
   - component: {fileID: 3407932808107350279}
-  - component: {fileID: 7451183901660010417}
   - component: {fileID: 4248024152209366605}
   m_Layer: 0
   m_Name: Book02 (8)
@@ -29657,33 +28900,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!54 &7451183901660010417
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6292360324776896478}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!65 &4248024152209366605
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -30256,7 +29472,6 @@ GameObject:
   - component: {fileID: 1539677291167608767}
   - component: {fileID: 4879896691653790924}
   - component: {fileID: 5429509324716431669}
-  - component: {fileID: 5213445497665585765}
   - component: {fileID: 6918062671057532188}
   m_Layer: 0
   m_Name: Book10 (18)
@@ -30333,33 +29548,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!54 &5213445497665585765
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6513397017987774789}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!65 &6918062671057532188
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -31796,7 +30984,6 @@ GameObject:
   - component: {fileID: 6468299404832345469}
   - component: {fileID: 9110559632490876568}
   - component: {fileID: 4484580454603489398}
-  - component: {fileID: 4902264011046028338}
   - component: {fileID: 5765995722967157321}
   m_Layer: 0
   m_Name: Book09d (5)
@@ -31873,33 +31060,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!54 &4902264011046028338
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6804019732923816817}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!65 &5765995722967157321
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -32040,7 +31200,6 @@ GameObject:
   - component: {fileID: 6503188202823238168}
   - component: {fileID: 518842543134529905}
   - component: {fileID: 6973569716398808119}
-  - component: {fileID: 4545552472182710817}
   - component: {fileID: 325327552130683372}
   m_Layer: 0
   m_Name: Book10b (20)
@@ -32117,33 +31276,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!54 &4545552472182710817
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6807510692876382348}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!65 &325327552130683372
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -32176,7 +31308,6 @@ GameObject:
   - component: {fileID: 3999896101282960586}
   - component: {fileID: 3921467069159504706}
   - component: {fileID: 7160872928936974815}
-  - component: {fileID: 4805493583554414347}
   - component: {fileID: 4978223460539116416}
   m_Layer: 0
   m_Name: Book02 (9)
@@ -32253,33 +31384,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!54 &4805493583554414347
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6851328356586785408}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!65 &4978223460539116416
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -32312,7 +31416,6 @@ GameObject:
   - component: {fileID: 8611279548377961312}
   - component: {fileID: 6233713609669934041}
   - component: {fileID: 7733139794099634994}
-  - component: {fileID: 8877653816765957520}
   - component: {fileID: 3279581115012368820}
   m_Layer: 0
   m_Name: Book11 (4)
@@ -32389,33 +31492,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!54 &8877653816765957520
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6903167473766199126}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!65 &3279581115012368820
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -33441,7 +32517,6 @@ GameObject:
   - component: {fileID: 8663030750329420269}
   - component: {fileID: 8519051791104383696}
   - component: {fileID: 7332231210609932532}
-  - component: {fileID: 1724244334443138849}
   - component: {fileID: 6616652131211147736}
   m_Layer: 0
   m_Name: Book08 (5)
@@ -33518,33 +32593,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!54 &1724244334443138849
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7237461036308378178}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!65 &6616652131211147736
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -35617,7 +34665,7 @@ GameObject:
   m_Layer: 0
   m_Name: Room 2
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -35636,6 +34684,7 @@ Transform:
   m_Children:
   - {fileID: 5220606091929958860}
   - {fileID: 3939802153487876861}
+  - {fileID: 944307401590422077}
   - {fileID: 8122012935045778793}
   - {fileID: 4948927049161224453}
   - {fileID: 6978488904917669471}
@@ -35869,7 +34918,6 @@ GameObject:
   - component: {fileID: 7895553622295107110}
   - component: {fileID: 2444129523630804029}
   - component: {fileID: 5855918594964117767}
-  - component: {fileID: 6752842567777876966}
   - component: {fileID: 9081516922286133665}
   m_Layer: 0
   m_Name: Book09e
@@ -35946,33 +34994,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!54 &6752842567777876966
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7842316832892456564}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!65 &9081516922286133665
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -37294,7 +36315,6 @@ GameObject:
   - component: {fileID: 3624073335701930455}
   - component: {fileID: 3493964754106271487}
   - component: {fileID: 8270287272033891778}
-  - component: {fileID: 1789580322718837385}
   - component: {fileID: 3856286066213669225}
   m_Layer: 0
   m_Name: Book12 (10)
@@ -37371,33 +36391,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!54 &1789580322718837385
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8197944011957957690}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!65 &3856286066213669225
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -37430,7 +36423,6 @@ GameObject:
   - component: {fileID: 2949412966030631543}
   - component: {fileID: 7045735836659276972}
   - component: {fileID: 486003529940850520}
-  - component: {fileID: 7778822891459443290}
   - component: {fileID: 4890326775693700734}
   m_Layer: 0
   m_Name: Book05 (19)
@@ -37507,33 +36499,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!54 &7778822891459443290
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8199648968182360189}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!65 &4890326775693700734
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -38883,7 +37848,6 @@ GameObject:
   - component: {fileID: 6322068224256007105}
   - component: {fileID: 5390720472122505480}
   - component: {fileID: 8988595086867686814}
-  - component: {fileID: 2996094411048238653}
   - component: {fileID: 4576366523147233888}
   m_Layer: 0
   m_Name: Book02 (12)
@@ -38960,33 +37924,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!54 &2996094411048238653
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8672320978297779183}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!65 &4576366523147233888
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -40913,7 +39850,6 @@ GameObject:
   - component: {fileID: 2579886882096507905}
   - component: {fileID: 2002932899173225275}
   - component: {fileID: 6008039175833965765}
-  - component: {fileID: 3314346032319185576}
   - component: {fileID: 3068979053799755099}
   m_Layer: 0
   m_Name: Book12 (5)
@@ -40990,33 +39926,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!54 &3314346032319185576
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9031629783901562339}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!65 &3068979053799755099
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -43927,11 +42836,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8781761338757109399, guid: 92247263813f63445ac185dd83649b88, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.125
+      value: 1.1
       objectReference: {fileID: 0}
     - target: {fileID: 8781761338757109399, guid: 92247263813f63445ac185dd83649b88, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.5000007
+      value: 4.300001
       objectReference: {fileID: 0}
     - target: {fileID: 8781761338757109399, guid: 92247263813f63445ac185dd83649b88, type: 3}
       propertyPath: m_LocalRotation.w
@@ -44207,7 +43116,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2716266008982712112, guid: cd3bc622d5ad3ee4cb7fdd9ce28afdec, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.90000004
+      value: 0.875
       objectReference: {fileID: 0}
     - target: {fileID: 2716266008982712112, guid: cd3bc622d5ad3ee4cb7fdd9ce28afdec, type: 3}
       propertyPath: m_LocalPosition.z
@@ -44888,7 +43797,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2716266008982712112, guid: cd3bc622d5ad3ee4cb7fdd9ce28afdec, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.875
+      value: 0.85
       objectReference: {fileID: 0}
     - target: {fileID: 2716266008982712112, guid: cd3bc622d5ad3ee4cb7fdd9ce28afdec, type: 3}
       propertyPath: m_LocalPosition.z
@@ -45086,7 +43995,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 731010743476641814, guid: c7e3efe5d62984f448ebccd36ed1daf1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.425
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 731010743476641814, guid: c7e3efe5d62984f448ebccd36ed1daf1, type: 3}
       propertyPath: m_LocalPosition.z
@@ -45179,7 +44088,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 731010743476641814, guid: c7e3efe5d62984f448ebccd36ed1daf1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.425
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 731010743476641814, guid: c7e3efe5d62984f448ebccd36ed1daf1, type: 3}
       propertyPath: m_LocalPosition.z
@@ -45285,6 +44194,68 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 731010743476641814, guid: c7e3efe5d62984f448ebccd36ed1daf1, type: 3}
   m_PrefabInstance: {fileID: 8218923779866615255}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &8414360164151454890
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 5799802436970563216}
+    m_Modifications:
+    - target: {fileID: 3680062609008432201, guid: 92247263813f63445ac185dd83649b88, type: 3}
+      propertyPath: m_Name
+      value: CameraPoint (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8781761338757109399, guid: 92247263813f63445ac185dd83649b88, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8781761338757109399, guid: 92247263813f63445ac185dd83649b88, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8781761338757109399, guid: 92247263813f63445ac185dd83649b88, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.7250007
+      objectReference: {fileID: 0}
+    - target: {fileID: 8781761338757109399, guid: 92247263813f63445ac185dd83649b88, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8781761338757109399, guid: 92247263813f63445ac185dd83649b88, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8781761338757109399, guid: 92247263813f63445ac185dd83649b88, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8781761338757109399, guid: 92247263813f63445ac185dd83649b88, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8781761338757109399, guid: 92247263813f63445ac185dd83649b88, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8781761338757109399, guid: 92247263813f63445ac185dd83649b88, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8781761338757109399, guid: 92247263813f63445ac185dd83649b88, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 92247263813f63445ac185dd83649b88, type: 3}
+--- !u!4 &944307401590422077 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8781761338757109399, guid: 92247263813f63445ac185dd83649b88, type: 3}
+  m_PrefabInstance: {fileID: 8414360164151454890}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8487182706628292934
 PrefabInstance:

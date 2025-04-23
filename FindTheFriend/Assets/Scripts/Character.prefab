@@ -935,7 +935,7 @@ MonoBehaviour:
   - {fileID: 5532292750743673835}
   - {fileID: 1019609334666580901}
   - {fileID: 2486081447142474965}
-  spawnPrefab: {fileID: 793570472073918119, guid: a0710c0a11ddf324fb5db8873095e55d, type: 3}
+  spawnPrefab: {fileID: 793570472073918119, guid: fcbde3d3805d17e44a715e70521d8811, type: 3}
   prefabToSpawn: {fileID: 6052652216943074110, guid: 598aaabefc591b2468d1004449a7f923, type: 3}
   spawnParent: {fileID: 3145534292843301762}
   spawnOffset: {x: 0, y: 0, z: 0}
