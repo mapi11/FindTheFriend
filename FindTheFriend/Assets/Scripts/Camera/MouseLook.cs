@@ -27,7 +27,7 @@ public class MouseLook : MonoBehaviour
     void Update()
     {
         // Переключение режима по нажатию Esc
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.E))
         {
             SetCameraActive(!isCameraActive);
         }

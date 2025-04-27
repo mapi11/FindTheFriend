@@ -49,14 +49,14 @@ public class GlassesScript : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.T))
-        {
-            GetGlasses();
-        }
-        if (Input.GetKeyDown(KeyCode.Y))
-        {
-            SetGlasses();
-        }
+        //if (Input.GetKeyDown(KeyCode.T))
+        //{
+        //    GetGlasses();
+        //}
+        //if (Input.GetKeyDown(KeyCode.Y))
+        //{
+        //    SetGlasses();
+        //}
 
         if (Input.GetMouseButtonDown(0))
             HandleClick();

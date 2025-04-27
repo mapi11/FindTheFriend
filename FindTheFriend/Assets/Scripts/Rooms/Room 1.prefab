@@ -3468,9 +3468,9 @@ MonoBehaviour:
   - {fileID: 887617772834295074}
   - {fileID: 8906620639412312964}
   - {fileID: 648191917613135101}
-  spawnChance: 0.25
+  spawnChance: 0.35
   spawnOnStart: 1
-  spawnCountRange: {x: 0, y: 6}
+  spawnCountRange: {x: 2, y: 11}
   destroyOldInstances: 0
 --- !u!1 &3522536726850382755
 GameObject:
@@ -8433,6 +8433,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefabsToSpawn:
   - {fileID: 5983100534332725075, guid: f608df1d08c58c5449ae349826521bc9, type: 3}
+  - {fileID: 7082986572714133961, guid: 4864f0ab68d3b8f47a20bfe18866bda6, type: 3}
   spawnPoints:
   - {fileID: 5466447798174467934}
   - {fileID: 8655493291156183072}

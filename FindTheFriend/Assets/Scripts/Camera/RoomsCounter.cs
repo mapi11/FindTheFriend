@@ -7,14 +7,30 @@ public class RoomsCounter : MonoBehaviour
     public int RoomCount = 0;
     public TextMeshProUGUI RoomCountTxt;
 
-   [Header("Настройки рекламы")]
+    [Header("Настройки рекламы")]
     [SerializeField] private int minRoomsBetweenAds = 10;
     [SerializeField] private int maxRoomsBetweenAds = 20;
-    private int nextAdRoom;
+    [SerializeField] private GameObject yandexPrefab;
+   private int nextAdRoom;
 
     private void Start()
     {
-        // Устанавливаем первую комнату для показа рекламы
+        // Проверка на корректность введенных значений
+        if (minRoomsBetweenAds <= 0 || maxRoomsBetweenAds <= 0)
+        {
+            Debug.LogError("Значения minRoomsBetweenAds и maxRoomsBetweenAds должны быть больше 0!");
+            minRoomsBetweenAds = 10;
+            maxRoomsBetweenAds = 20;
+        }
+
+        if (minRoomsBetweenAds > maxRoomsBetweenAds)
+        {
+            Debug.LogError("minRoomsBetweenAds не может быть больше maxRoomsBetweenAds! Значения будут поменяны местами.");
+            int temp = minRoomsBetweenAds;
+            minRoomsBetweenAds = maxRoomsBetweenAds;
+            maxRoomsBetweenAds = temp;
+        }
+
         SetNextAdRoom();
     }
 
@@ -25,6 +41,14 @@ public class RoomsCounter : MonoBehaviour
 
     private void UpdateRoomCountText()
     {
+
+        // Проверяем нужно ли показывать рекламу
+        if (RoomCount == nextAdRoom) // Изменил >= на == для точного совпадения
+        {
+            PlayAd();
+            SetNextAdRoom();
+        }
+
         if (RoomCountTxt != null)
         {
             RoomCountTxt.text = "Комната: " + RoomCount.ToString();
@@ -34,31 +58,29 @@ public class RoomsCounter : MonoBehaviour
     public void IncreaseRoomCount()
     {
         RoomCount++;
+
         UpdateRoomCountText();
-        
-        // Проверяем нужно ли показывать рекламу
-        if (RoomCount >= nextAdRoom)
-        {
-            PlayAd(); // Ваш метод для показа рекламы
-            SetNextAdRoom(); // Устанавливаем следующую комнату для рекламы
-        }
     }
 
     private void SetNextAdRoom()
     {
-        // Случайное значение между min и max
+        // Генерируем случайное количество комнат до следующей рекламы
         int roomsToAdd = Random.Range(minRoomsBetweenAds, maxRoomsBetweenAds + 1);
+
+        // Устанавливаем следующую комнату для рекламы
         nextAdRoom = RoomCount + roomsToAdd;
-        
-        Debug.Log($"Следующая реклама будет на комнате: {nextAdRoom}");
+
+        Debug.Log($"Следующая реклама будет на комнате: {nextAdRoom} (через {roomsToAdd} комнат)");
     }
 
-    private void PlayAd()
+    public void PlayAd()
     {
         // Здесь ваша логика показа рекламы
-        Debug.Log($"Показываем рекламу на комнате {RoomCount}");
-        
+        Debug.Log("ААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААА " + RoomCount);
+        yandexPrefab.SetActive(true);
+
+
         // Пример вызова Yandex рекламы:
-        // YandexGame.RewVideoShow(0);
+        //YandexGame.RewVideoShow(0);
     }
 }

@@ -284,6 +284,18 @@ MonoBehaviour:
   exitPoint: {fileID: 6202622061329800039}
   roomSpawnPoint: {fileID: 7674006984872032907}
   roomPrefabs:
+  - {fileID: 8355531086153619813, guid: 9aef5d7e854067048a26e8d75244dc6b, type: 3}
+  - {fileID: 8355531086153619813, guid: 9aef5d7e854067048a26e8d75244dc6b, type: 3}
+  - {fileID: 3346968511597294549, guid: 3a4ba452022bc8c4bb2cb7ea02569cbb, type: 3}
+  - {fileID: 3346968511597294549, guid: 3a4ba452022bc8c4bb2cb7ea02569cbb, type: 3}
+  - {fileID: 7797941415684937697, guid: 096706c50ecf6284894874409fc542e1, type: 3}
+  - {fileID: 7388325756938226497, guid: 233bfc5a55941f640a9ce701744dd98f, type: 3}
+  - {fileID: 5531600105931264036, guid: e67d58acae6146c46abcb4a72e3ffbb2, type: 3}
+  - {fileID: 5531600105931264036, guid: e67d58acae6146c46abcb4a72e3ffbb2, type: 3}
+  - {fileID: 830592866072165527, guid: 7a07524e11841c04990b0e4c9c0ca3f7, type: 3}
+  - {fileID: 830592866072165527, guid: 7a07524e11841c04990b0e4c9c0ca3f7, type: 3}
+  - {fileID: 5509127393546385510, guid: 5aa63da92c28cb240a907ade944b9fa8, type: 3}
+  - {fileID: 5509127393546385510, guid: 5aa63da92c28cb240a907ade944b9fa8, type: 3}
   - {fileID: 3654747799149328808, guid: 2297f137df9f21d4d9bdc04899158b1f, type: 3}
   doorModel: {fileID: 0}
   usedDoorMaterial: {fileID: 0}

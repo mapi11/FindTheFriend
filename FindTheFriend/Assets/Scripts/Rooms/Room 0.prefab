@@ -377,6 +377,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefabsToSpawn:
   - {fileID: 5983100534332725075, guid: f608df1d08c58c5449ae349826521bc9, type: 3}
+  - {fileID: 7082986572714133961, guid: 4864f0ab68d3b8f47a20bfe18866bda6, type: 3}
   spawnPoints:
   - {fileID: 8481892046368594712}
   - {fileID: 45247200843188128}
@@ -396,7 +397,6 @@ GameObject:
   - component: {fileID: 8867828108977899346}
   - component: {fileID: 7130001842185636957}
   - component: {fileID: 6224931476673071931}
-  - component: {fileID: 2192911555436484356}
   - component: {fileID: 2322641849078980507}
   m_Layer: 0
   m_Name: Book09b
@@ -473,33 +473,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!54 &2192911555436484356
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3122329732745712207}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!65 &2322641849078980507
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -568,7 +541,6 @@ GameObject:
   - component: {fileID: 652011729232003014}
   - component: {fileID: 9209261048426387702}
   - component: {fileID: 1289238338025892421}
-  - component: {fileID: 104922725207586329}
   m_Layer: 0
   m_Name: Flask05 (1)
   m_TagString: Untagged
@@ -668,33 +640,6 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 7c83c5368a90fed4a8af73e476d9a3f0, type: 3}
---- !u!54 &104922725207586329
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5004245368127483399}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &5397292051341541390
 GameObject:
   m_ObjectHideFlags: 0
@@ -1595,7 +1540,6 @@ GameObject:
   - component: {fileID: 3473104164502312177}
   - component: {fileID: 8076982221515314674}
   - component: {fileID: 5587600682658697451}
-  - component: {fileID: 2729412878446869638}
   m_Layer: 0
   m_Name: Candle01d (1)
   m_TagString: Untagged
@@ -1693,33 +1637,6 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: af67691b675f49b42afff7084e88cef6, type: 3}
---- !u!54 &2729412878446869638
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6030884834169233358}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &6644022463204424578
 GameObject:
   m_ObjectHideFlags: 0
@@ -1732,7 +1649,6 @@ GameObject:
   - component: {fileID: 7908737982651056795}
   - component: {fileID: 1888323337556079334}
   - component: {fileID: 8818330666177662537}
-  - component: {fileID: 5341120488698144878}
   m_Layer: 0
   m_Name: Bottle04b (4)
   m_TagString: Untagged
@@ -1832,33 +1748,6 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300002, guid: 63549bf603a76da4ebeecdcf94411563, type: 3}
---- !u!54 &5341120488698144878
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6644022463204424578}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &7182716627006421436
 GameObject:
   m_ObjectHideFlags: 0
@@ -1980,7 +1869,7 @@ MonoBehaviour:
   - {fileID: 4374980276375779817}
   spawnChance: 0.4
   spawnOnStart: 1
-  spawnCountRange: {x: 0, y: 4}
+  spawnCountRange: {x: 2, y: 4}
   destroyOldInstances: 0
 --- !u!1 &7778230931353215844
 GameObject:
@@ -2091,7 +1980,6 @@ GameObject:
   - component: {fileID: 7519084359727775920}
   - component: {fileID: 5737274859163030010}
   - component: {fileID: 7418066581780109486}
-  - component: {fileID: 6898924238913962951}
   - component: {fileID: 7235056827885520785}
   m_Layer: 0
   m_Name: Book11 (2)
@@ -2168,33 +2056,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!54 &6898924238913962951
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8976595186154037973}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!65 &7235056827885520785
 BoxCollider:
   m_ObjectHideFlags: 0

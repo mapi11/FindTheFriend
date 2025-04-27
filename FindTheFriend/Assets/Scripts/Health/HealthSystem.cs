@@ -46,18 +46,18 @@ public class HealthSystem : MonoBehaviour
         UpdateHearts();
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            TakeDamage();
-        }
+    //private void Update()
+    //{
+    //    if (Input.GetKeyDown(KeyCode.R))
+    //    {
+    //        TakeDamage();
+    //    }
 
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            Heal();
-        }
-    }
+    //    if (Input.GetKeyDown(KeyCode.E))
+    //    {
+    //        Heal();
+    //    }
+    //}
 
     // Метод для перезагрузки сцены с сохранением RoomCount
     private void ReloadRevive()

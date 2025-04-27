@@ -21,7 +21,7 @@ public class OpenMenu : MonoBehaviour
     void Update()
     {
         // Опционально: управление через Escape
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.E))
         {
             ToggleMenu();
         }
