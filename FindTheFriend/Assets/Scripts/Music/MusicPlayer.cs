@@ -44,6 +44,11 @@ public class MusicPlayer : MonoBehaviour
         {
             PlayRandomTrack();
         }
+
+        // Регистрируем обработчик видимости страницы
+#if UNITY_WEBGL && !UNITY_EDITOR
+        SetupVisibilityListener();
+#endif
     }
 
     void Update()
@@ -98,4 +103,24 @@ public class MusicPlayer : MonoBehaviour
             _shouldRestorePlayback = _audioSource.isPlaying;
         }
     }
+
+
+
+    // Вызывается из JavaScript, когда страница скрыта
+    public void OnPageHidden()
+    {
+        AudioListener.pause = true;  // Приостановить весь звук
+        AudioListener.volume = 0;   // Можно также обнулить громкость
+    }
+
+    // Вызывается из JavaScript, когда страница снова активна
+    public void OnPageVisible()
+    {
+        AudioListener.pause = false;
+        AudioListener.volume = 1;   // Восстановить громкость
+    }
+
+    // Импорт функции из JavaScript
+    [System.Runtime.InteropServices.DllImport("__Internal")]
+    private static extern void SetupVisibilityListener();
 }

@@ -43,7 +43,7 @@ public class MoneyCount : MonoBehaviour
         Debug.Log($"Загружено денег: {_currentMoney}");
     }
 
-    private void SaveMoney()
+    public void SaveMoney()
     {
         PlayerPrefs.SetInt(MONEY_PREFS_KEY, _currentMoney);
         PlayerPrefs.Save();
